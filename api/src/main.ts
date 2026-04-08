@@ -6,8 +6,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('P2P Transaction API')
-    .setDescription('P2P Transaction API')
+    .setTitle('MADITRON API')
+    .setDescription('MMORPG Cyberpunk Game')
     .setVersion('1.0')
     .build();
 
