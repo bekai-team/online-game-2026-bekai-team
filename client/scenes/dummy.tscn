@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cwolu7s836i3c"]
+
+[ext_resource type="Texture2D" uid="uid://gq7fbxrjqmvc" path="res://assets/icon.svg" id="1_gtj52"]
+[ext_resource type="Script" uid="uid://d0yrklmwdm6ig" path="res://scripts/dummy.gd" id="1_xmspm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmspm"]
+size = Vector2(127.5, 126)
+
+[node name="Dummy" type="CharacterBody2D" unique_id=279426681]
+position = Vector2(-379, -1)
+script = ExtResource("1_xmspm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1965036539]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(952, 254)
+texture = ExtResource("1_gtj52")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2119232052]
+position = Vector2(953.25, 253)
+shape = SubResource("RectangleShape2D_xmspm")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=838990624]
+offset_left = 889.0
+offset_top = 139.0
+offset_right = 1018.0
+offset_bottom = 174.0
+show_percentage = false
