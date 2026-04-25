@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { LoginDto } from './dto/login.dto';
 import { SignUpDto } from './dto/sign-up.dto';
 import { UserService } from 'src/user/user.service';
@@ -19,7 +19,15 @@ export class AuthService {
 
   async login(loginDto: LoginDto) {
     const user = await this.userService.findByEmail(loginDto.email);
+    const isMatchedPassword = await bcrypt.compare(loginDto.password, user['password']);
 
-    return await 'XDD';
+    if (!isMatchedPassword) {
+      throw new UnauthorizedException('Wrong password');
+    }
+
+    const payload = { sub: user['id'], username: user['username'], email: user['email'] };
+    return {
+      accessToken: await this.jwtService.signAsync(payload),
+    };
   }
 }
