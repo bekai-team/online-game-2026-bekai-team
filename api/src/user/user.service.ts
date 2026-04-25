@@ -5,6 +5,7 @@ import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
+import { UserRole } from 'src/shared/enums/user-role.enum';
 
 @Injectable()
 export class UserService {
@@ -17,7 +18,11 @@ export class UserService {
 
   async create(createUserDto: CreateUserDto) {
     const hashedPassword = await bcrypt.hash(createUserDto.password, this.salt);
-    const user = this.userRepository.create({ ...createUserDto, password: hashedPassword });
+    const user = this.userRepository.create({
+      ...createUserDto,
+      password: hashedPassword,
+      role: UserRole.USER,
+    });
     return await this.userRepository.save(user);
   }
 
@@ -26,15 +31,15 @@ export class UserService {
   }
 
   async findById(id: string) {
-    return await this.userRepository.findBy({ id: id });
+    return await this.userRepository.findOneBy({ id: id });
   }
 
   async findByEmail(email: string) {
-    return await this.userRepository.findBy({ email: email });
+    return await this.userRepository.findOneBy({ email: email });
   }
 
   async findByUsername(username: string) {
-    return await this.userRepository.findBy({ username: username });
+    return await this.userRepository.findOneBy({ username: username });
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {

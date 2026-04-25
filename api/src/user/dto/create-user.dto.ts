@@ -20,7 +20,4 @@ export class CreateUserDto implements UserDataSignUp {
     minSymbols: 1,
   })
   password: string;
-
-  @IsEnum(UserRole)
-  role: UserRole;
 }
