@@ -1,7 +1,8 @@
 import { IsEmail, IsEnum, IsNotEmpty, IsString, IsStrongPassword } from 'class-validator';
-import { UserRole } from '../enums/user-role.enum';
+import { UserRole } from 'src/shared/enums/user-role.enum';
+import { UserDataSignUp } from 'src/shared/interface/user-data-signup.interface';
 
-export class SignUpDto {
+export class SignUpDto implements UserDataSignUp {
   @IsNotEmpty({ message: 'Username field is empty' })
   @IsString()
   username: string;

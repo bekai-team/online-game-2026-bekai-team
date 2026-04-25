@@ -1,6 +1,7 @@
 import { IsEmail, IsNotEmpty } from 'class-validator';
+import { UserData } from 'src/shared/interface/user-data.interface';
 
-export class LoginDto {
+export class LoginDto implements UserData {
   @IsNotEmpty({ message: 'Email field is empty' })
   @IsEmail()
   email: string;
