@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b7o4fv7cxnp7"]
+
+[ext_resource type="Script" uid="uid://c08y2rlkvs06k" path="res://character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://gq7fbxrjqmvc" path="res://icon.svg" id="1_wtcfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(125, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1068875508]
+position = Vector2(131, 129)
+script = ExtResource("1_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1351909981]
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=248044628]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="MeleeHitbox" type="Area2D" parent="." unique_id=762223400]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitbox" unique_id=1207987450]
+position = Vector2(116, 0)
+shape = SubResource("RectangleShape2D_wtcfe")
