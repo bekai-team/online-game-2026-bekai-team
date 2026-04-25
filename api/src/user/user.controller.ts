@@ -18,8 +18,8 @@ export class UserController {
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string) {
-    return await this.userService.findOne(id);
+  async findById(@Param('id') id: string) {
+    return await this.userService.findById(id);
   }
 
   @Patch(':id')

@@ -8,10 +8,11 @@ import { UserData } from 'src/shared/interface/user-data.interface';
 
 @Injectable()
 export class AuthService {
+  private readonly salt: number = 10;
+
   constructor(
     private userService: UserService,
     private jwtService: JwtService,
-    private readonly salt: number = 10,
   ) {}
 
   async signUp(signUpDto: SignUpDto) {
