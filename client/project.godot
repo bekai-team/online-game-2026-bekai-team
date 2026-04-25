@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Maditron_CharacterBody2D"
-run/main_scene="uid://b7o4fv7cxnp7"
+run/main_scene="uid://bw4p3ncw5k8rm"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
+
+[dotnet]
+
+project/assembly_name="Maditron_CharacterBody2D"
 
 [input]
 
