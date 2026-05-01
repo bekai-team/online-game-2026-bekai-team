@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty } from 'class-validator';
+import { IsEmail, IsEmpty, IsNotEmpty } from 'class-validator';
 import { UserData } from 'src/shared/interface/user-data.interface';
 
 export class LoginDto implements UserData {
