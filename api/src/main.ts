@@ -13,6 +13,7 @@ async function bootstrap() {
     .setTitle('MADITRON API')
     .setDescription('MMORPG Cyberpunk Game')
     .setVersion('1.0.0')
+    .addBearerAuth()
     .build();
 
   const document = () => SwaggerModule.createDocument(app, config);

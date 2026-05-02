@@ -51,4 +51,15 @@ export class AuthService {
       accessToken: await this.jwtService.signAsync(payload),
     };
   }
+
+  async validateUser(loginDto: LoginDto) {
+    const user = await this.userService.findByEmail(loginDto.email);
+
+    if (user && (await bcrypt.compare(loginDto.password, user.password))) {
+      const { password, ...result } = user;
+      return result;
+    }
+
+    return null;
+  }
 }
