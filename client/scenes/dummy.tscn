@@ -7,7 +7,6 @@
 size = Vector2(127.5, 126)
 
 [node name="Dummy" type="CharacterBody2D" unique_id=279426681]
-position = Vector2(-379, -1)
 script = ExtResource("1_xmspm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1965036539]
