@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dmbjrfiiibfjd"]
+
+[ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="1_fmhiv"]
+[ext_resource type="Script" uid="uid://cacm1ibqr7gxe" path="res://scripts/menu_btn.gd" id="2_f2mkp"]
+
+[node name="Button" type="Button" unique_id=348370857]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_fmhiv")
+text = "Back to menu"
+script = ExtResource("2_f2mkp")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
