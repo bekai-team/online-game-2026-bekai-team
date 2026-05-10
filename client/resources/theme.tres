@@ -1,0 +1,13 @@
+[gd_resource type="Theme" format=3 uid="uid://d4bxu0rb5octp"]
+
+[ext_resource type="Texture2D" uid="uid://7gnsh0xayj1m" path="res://assets/ui/btn.png" id="1_7ct1h"]
+[ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="2_886mr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
+texture = ExtResource("1_7ct1h")
+
+[resource]
+default_font = ExtResource("2_886mr")
+default_font_size = 16
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/styles/normal = SubResource("StyleBoxTexture_oa1go")

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://reo82ehn6uf5"]
+
+[ext_resource type="PackedScene" uid="uid://dk472u8powdlh" path="res://scenes/background.tscn" id="1_8ln24"]
+[ext_resource type="Texture2D" uid="uid://bifjcwrrlltk3" path="res://assets/ui/logo.png" id="2_wu84c"]
+[ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="3_wu84c"]
+[ext_resource type="Script" uid="uid://djc3stvb7mtue" path="res://scripts/login_menu_btn.gd" id="5_8ln24"]
+
+[node name="Main Menu" type="Control" unique_id=936435750]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." unique_id=1971102390 instance=ExtResource("1_8ln24")]
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=1285203825]
+position = Vector2(320, 320)
+scale = Vector2(0.24031, 0.24031004)
+texture = ExtResource("2_wu84c")
+
+[node name="Login" type="Button" parent="." unique_id=649761037]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 129.0
+offset_right = 604.0
+offset_bottom = 157.0
+theme = ExtResource("3_wu84c")
+text = "Login"
+script = ExtResource("5_8ln24")
+
+[node name="Register" type="Button" parent="." unique_id=490449592]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 170.0
+offset_right = 604.0
+offset_bottom = 198.0
+theme = ExtResource("3_wu84c")
+text = "Register"
+
+[connection signal="pressed" from="Login" to="Login" method="_on_pressed"]

@@ -6,7 +6,8 @@
 [node name="Node2D" type="Node2D" unique_id=1144204397]
 
 [node name="CharacterBody2D" parent="." unique_id=1068875508 instance=ExtResource("1_fj7yv")]
-position = Vector2(121, 112)
+position = Vector2(54, 40)
 
 [node name="Dummy" parent="." unique_id=279426681 instance=ExtResource("2_tlwt5")]
-position = Vector2(-401, 59)
+position = Vector2(-28.99997, 54.000008)
+scale = Vector2(0.23896596, 0.23896596)
