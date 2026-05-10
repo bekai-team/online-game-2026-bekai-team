@@ -2,12 +2,29 @@
 
 [ext_resource type="Texture2D" uid="uid://7gnsh0xayj1m" path="res://assets/ui/btn.png" id="1_7ct1h"]
 [ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="2_886mr"]
+[ext_resource type="Texture2D" uid="uid://dgrr6icu758m3" path="res://assets/ui/window.png" id="2_b751m"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
 texture = ExtResource("1_7ct1h")
+texture_margin_left = 3.0
+texture_margin_top = 2.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owntx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aaf3v"]
+texture = ExtResource("2_b751m")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
 
 [resource]
 default_font = ExtResource("2_886mr")
 default_font_size = 16
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/styles/normal = SubResource("StyleBoxTexture_oa1go")
+CheckBox/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_owntx")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_aaf3v")
