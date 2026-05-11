@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cm43dfutshc5u"]
 
-[ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://wnjkxeqakne6" path="res://scripts/character.gd" id="1_irmqu"]
 [ext_resource type="Texture2D" uid="uid://gq7fbxrjqmvc" path="res://assets/icon.svg" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://d0567y7axi4vs" path="res://assets/sprites/character/upper/coat_normal_front.png" id="6_3m5ht"]
 [ext_resource type="Texture2D" uid="uid://bvcvjyyyuq4ja" path="res://assets/sprites/character/body/body_normal_back.png" id="6_hh0fu"]
@@ -1990,7 +1990,7 @@ animations = [{
 
 [node name="Character" type="CharacterBody2D" unique_id=1068875508]
 z_index = 1
-script = ExtResource("1_0e48y")
+script = ExtResource("1_irmqu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1351909981]
 visible = false
