@@ -1,10 +1,11 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Post, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Post, Req, Request, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { SignUpDto } from './dto/sign-up.dto';
 import { LocalAuthGuard } from 'src/guards/local.guard';
 import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
 import { ApiBearerAuth, ApiBody } from '@nestjs/swagger';
+import { RefreshAuthGuard } from 'src/guards/refresh-auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -14,12 +15,6 @@ export class AuthController {
   async signUp(@Body() signUpDto: SignUpDto) {
     return await this.authService.signUp(signUpDto);
   }
-
-  // @UseGuards(LocalAuthGuard)
-  // @Post('login')
-  // async login(@Body() loginDto: LoginDto) {
-  //   return await this.authService.login(loginDto);
-  // }
 
   @ApiBody({
     schema: {
@@ -34,9 +29,7 @@ export class AuthController {
   @Post('login')
   @HttpCode(HttpStatus.OK)
   async login(@Request() req) {
-    const token = await this.authService.login(req.user.id, req.user.email);
-
-    return { ...req.user, accessToken: token };
+    return await this.authService.login(req.user.id, req.user.email);
   }
 
   @ApiBearerAuth()
@@ -53,15 +46,10 @@ export class AuthController {
     return req.logout();
   }
 
-  // @ApiBearerAuth()
-  // @Post('refresh')
-  // async refresh(@Body() pastRefreshToken: string) {
-  //   const { accessToken, refreshToken } = await this.authService.refreshTokens(pastRefreshToken);
-
-  //   if (accessToken) {
-  //     throw new UnauthorizedException();
-  //   }
-
-  //   return { accessToken, refreshToken };
-  // }
+  @ApiBearerAuth()
+  @UseGuards(RefreshAuthGuard)
+  @Post('refresh')
+  async refreshToken(@Req() req) {
+    return this.authService.refreshToken(req.user.id, req.user.email);
+  }
 }

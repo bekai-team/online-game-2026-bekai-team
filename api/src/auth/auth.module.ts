@@ -10,6 +10,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { LocalStrategy } from './local.strategy';
 import jwtConfig from './config/jwt.config';
 import refreshJwtConfig from './config/refresh-jwt.config';
+import { RefreshJwtStrategy } from './refresh.strategy';
 
 @Module({
   imports: [
@@ -20,6 +21,6 @@ import refreshJwtConfig from './config/refresh-jwt.config';
     PassportModule,
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtStrategy, LocalStrategy],
+  providers: [AuthService, JwtStrategy, LocalStrategy, RefreshJwtStrategy],
 })
 export class AuthModule {}

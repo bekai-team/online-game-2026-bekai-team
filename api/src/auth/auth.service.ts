@@ -1,10 +1,11 @@
-import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
-import { LoginDto } from './dto/login.dto';
+import { BadRequestException, Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { SignUpDto } from './dto/sign-up.dto';
 import { UserService } from 'src/user/user.service';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { AuthJwtPayload } from './dto/auth-jwt-payload.dto';
+import refreshJwtConfig from './config/refresh-jwt.config';
+import { type ConfigType } from '@nestjs/config';
 
 @Injectable()
 export class AuthService {
@@ -13,6 +14,8 @@ export class AuthService {
   constructor(
     private userService: UserService,
     private jwtService: JwtService,
+    @Inject(refreshJwtConfig.KEY)
+    private refreshTokenConfig: ConfigType<typeof refreshJwtConfig>,
   ) {}
 
   async signUp(signUpDto: SignUpDto) {
@@ -36,8 +39,14 @@ export class AuthService {
   async login(userId: string, email: string) {
     const payload: AuthJwtPayload = { sub: userId, email: email };
     const token = await this.jwtService.signAsync(payload);
-    // const refreshToken = await
-    return token;
+    const refreshToken = await this.jwtService.signAsync(payload, this.refreshTokenConfig);
+    const result = {
+      id: userId,
+      email: email,
+      token,
+      refreshToken,
+    };
+    return result;
   }
 
   async validateUser(email: string, password: string) {
@@ -58,5 +67,16 @@ export class AuthService {
       email: user.email,
     };
     return result;
+  }
+
+  async refreshToken(userId: string, email: string) {
+    const payload: AuthJwtPayload = { sub: userId, email: email };
+    const token = await this.jwtService.signAsync(payload);
+
+    return {
+      id: userId,
+      email: email,
+      token,
+    };
   }
 }
