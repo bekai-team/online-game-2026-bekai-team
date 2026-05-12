@@ -1,11 +1,11 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Post, Req, Request, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Post, Req, Request, Res, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { LoginDto } from './dto/login.dto';
 import { SignUpDto } from './dto/sign-up.dto';
 import { LocalAuthGuard } from 'src/guards/local.guard';
 import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
 import { ApiBearerAuth, ApiBody } from '@nestjs/swagger';
 import { RefreshAuthGuard } from 'src/guards/refresh-auth.guard';
+import { LoginDto } from './dto/login.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -28,8 +28,8 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   @HttpCode(HttpStatus.OK)
-  async login(@Request() req) {
-    return await this.authService.login(req.user.id, req.user.email);
+  async login(@Request() req, @Res() res) {
+    return await this.authService.login(req.user.id, req.user.email, res);
   }
 
   @ApiBearerAuth()
