@@ -5,7 +5,6 @@ import { LocalAuthGuard } from 'src/guards/local.guard';
 import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
 import { ApiBearerAuth, ApiBody } from '@nestjs/swagger';
 import { RefreshAuthGuard } from 'src/guards/refresh-auth.guard';
-import { LoginDto } from './dto/login.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -28,8 +27,8 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   @HttpCode(HttpStatus.OK)
-  async login(@Request() req, @Res() res) {
-    return await this.authService.login(req.user.id, req.user.email, res);
+  async login(@Request() req) {
+    return await this.authService.login(req.user.id, req.user.email);
   }
 
   @ApiBearerAuth()
@@ -43,7 +42,7 @@ export class AuthController {
   @UseGuards(JwtAuthGuard)
   @Post('logout')
   async logout(@Request() req) {
-    return req.logout();
+    this.authService.logout(req.user.id);
   }
 
   @ApiBearerAuth()

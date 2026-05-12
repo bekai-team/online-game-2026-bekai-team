@@ -16,6 +16,10 @@ export class UserService {
     private readonly userRepository: Repository<User>,
   ) {}
 
+  async updateHashedRefreshToken(userId: string, hashedRefreshToken: string | null) {
+    return await this.userRepository.update({ id: userId }, { hashedRefreshToken: hashedRefreshToken });
+  }
+
   async create(createUserDto: CreateUserDto) {
     const hashedPassword = await bcrypt.hash(createUserDto.password, this.salt);
     const user = this.userRepository.create({
