@@ -1,26 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { CreateLlmDto } from './dto/create-llm.dto';
-import { UpdateLlmDto } from './dto/update-llm.dto';
+import { LlmTextDto } from './dto/llm-text.dto';
+import ollama from 'ollama';
 
 @Injectable()
 export class LlmService {
-  create(createLlmDto: CreateLlmDto) {
-    return 'This action adds a new llm';
-  }
+  async chat(llmTextDto: LlmTextDto) {
+    const message = { role: llmTextDto.role, content: llmTextDto.text };
 
-  findAll() {
-    return `This action returns all llm`;
-  }
+    const response = await ollama.chat({
+      model: 'tinyllama:1.1b',
+      messages: [message],
+    });
 
-  findOne(id: number) {
-    return `This action returns a #${id} llm`;
-  }
-
-  update(id: number, updateLlmDto: UpdateLlmDto) {
-    return `This action updates a #${id} llm`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} llm`;
+    return response.message;
   }
 }
