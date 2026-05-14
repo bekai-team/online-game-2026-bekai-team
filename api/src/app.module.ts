@@ -7,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TerminusModule } from '@nestjs/terminus';
 import { HttpModule } from '@nestjs/axios';
 import { HttpLoggerMiddleware } from './middlewares/http-logger/http-logger.middleware';
+import { LlmModule } from './llm/llm.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { HttpLoggerMiddleware } from './middlewares/http-logger/http-logger.midd
     DatabaseModule,
     TerminusModule,
     HttpModule,
+    LlmModule,
   ],
   controllers: [AppController],
   providers: [AppService],
