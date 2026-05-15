@@ -11,6 +11,7 @@ import { NpcModule } from './npc/npc.module';
 import { LlmModule } from './llm/llm.module';
 import { QuestModule } from './quest/quest.module';
 import { AuthModule } from './auth/auth.module';
+import { CharacterModule } from './character/character.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { AuthModule } from './auth/auth.module';
     AuthModule,
     LlmModule,
     QuestModule,
+    CharacterModule,
   ],
   controllers: [AppController],
   providers: [AppService],
