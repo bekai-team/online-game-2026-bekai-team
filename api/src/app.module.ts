@@ -9,6 +9,7 @@ import { HttpModule } from '@nestjs/axios';
 import { HttpLoggerMiddleware } from './middlewares/http-logger/http-logger.middleware';
 import { LlmModule } from './llm/llm.module';
 import { QuestModule } from './quest/quest.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { QuestModule } from './quest/quest.module';
     DatabaseModule,
     TerminusModule,
     HttpModule,
+    AuthModule,
     LlmModule,
     QuestModule,
   ],

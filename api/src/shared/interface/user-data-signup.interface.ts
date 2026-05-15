@@ -1,0 +1,6 @@
+import { UserRole } from '../enums/user-role.enum';
+import { UserData } from './user-data.interface';
+
+export interface UserDataSignUp extends UserData {
+  username: string;
+}
