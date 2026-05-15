@@ -15,6 +15,11 @@ run/main_scene="uid://reo82ehn6uf5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+AcceptQuestBtn="*uid://dawe8qe6v8081"
+QuestManager="*uid://0g4gfsh38sei"
+
 [display]
 
 window/size/viewport_width=640

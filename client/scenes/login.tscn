@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dk472u8powdlh" path="res://scenes/background.tscn" id="1_pymad"]
 [ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="2_nw41r"]
-[ext_resource type="Script" uid="uid://dloayxkrxa75g" path="res://scripts/login_req.gd" id="3_0emk2"]
+[ext_resource type="Script" uid="uid://cjvhosk6u0fdq" path="res://scripts/login_req.gd" id="3_0emk2"]
 [ext_resource type="PackedScene" uid="uid://dmbjrfiiibfjd" path="res://scenes/menu_btn.tscn" id="4_cs5o2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0emk2"]
@@ -47,12 +47,12 @@ text = "Log into account"
 label_settings = SubResource("LabelSettings_0emk2")
 horizontal_alignment = 1
 
-[node name="LineEdit3" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=1456439749]
+[node name="EmailInput" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=1456439749]
 layout_mode = 2
 placeholder_text = "Email"
 alignment = 1
 
-[node name="LineEdit2" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=946444187]
+[node name="PasswordInput" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=946444187]
 layout_mode = 2
 placeholder_text = "Password"
 alignment = 1
