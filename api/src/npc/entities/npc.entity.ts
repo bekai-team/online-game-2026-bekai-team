@@ -9,7 +9,7 @@ export class Npc {
   @Column()
   name: string;
 
-  @Column({ type: 'text', length: 500 })
+  @Column({ type: 'text' })
   description: string;
 
   @Column({ type: 'enum', enum: NpcAffilation, default: NpcAffilation.NEUTRAL })
