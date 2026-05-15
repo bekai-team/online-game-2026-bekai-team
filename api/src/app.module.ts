@@ -13,6 +13,7 @@ import { QuestModule } from './quest/quest.module';
 import { AuthModule } from './auth/auth.module';
 import { CharacterModule } from './character/character.module';
 import { InventoryModule } from './inventory/inventory.module';
+import { SpecialModule } from './special/special.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { InventoryModule } from './inventory/inventory.module';
     QuestModule,
     CharacterModule,
     InventoryModule,
+    SpecialModule,
   ],
   controllers: [AppController],
   providers: [AppService],
