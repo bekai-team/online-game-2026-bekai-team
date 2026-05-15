@@ -18,17 +18,17 @@ export class QuestController {
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string) {
-    return await this.questService.findOne(+id);
+  async findById(@Param('id') id: string) {
+    return await this.questService.findById(id);
   }
 
   @Patch(':id')
   async update(@Param('id') id: string, @Body() updateQuestDto: UpdateQuestDto) {
-    return await this.questService.update(+id, updateQuestDto);
+    return await this.questService.update(id, updateQuestDto);
   }
 
   @Delete(':id')
   async remove(@Param('id') id: string) {
-    return await this.questService.remove(+id);
+    return await this.questService.remove(id);
   }
 }
