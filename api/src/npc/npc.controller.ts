@@ -8,27 +8,27 @@ export class NpcController {
   constructor(private readonly npcService: NpcService) {}
 
   @Post()
-  create(@Body() createNpcDto: CreateNpcDto) {
-    return this.npcService.create(createNpcDto);
+  async create(@Body() createNpcDto: CreateNpcDto) {
+    return await this.npcService.create(createNpcDto);
   }
 
   @Get()
-  findAll() {
-    return this.npcService.findAll();
+  async findAll() {
+    return await this.npcService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.npcService.findOne(+id);
+  async findOne(@Param('id') id: string) {
+    return await this.npcService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateNpcDto: UpdateNpcDto) {
-    return this.npcService.update(+id, updateNpcDto);
+  async update(@Param('id') id: string, @Body() updateNpcDto: UpdateNpcDto) {
+    return await this.npcService.update(id, updateNpcDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.npcService.remove(+id);
+  async remove(@Param('id') id: string) {
+    return await this.npcService.remove(id);
   }
 }
