@@ -8,6 +8,7 @@ import { TerminusModule } from '@nestjs/terminus';
 import { HttpModule } from '@nestjs/axios';
 import { HttpLoggerMiddleware } from './middlewares/http-logger/http-logger.middleware';
 import { LlmModule } from './llm/llm.module';
+import { QuestModule } from './quest/quest.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { LlmModule } from './llm/llm.module';
     TerminusModule,
     HttpModule,
     LlmModule,
+    QuestModule,
   ],
   controllers: [AppController],
   providers: [AppService],
