@@ -8,27 +8,27 @@ export class CharacterController {
   constructor(private readonly characterService: CharacterService) {}
 
   @Post()
-  create(@Body() createCharacterDto: CreateCharacterDto) {
-    return this.characterService.create(createCharacterDto);
+  async create(@Body() createCharacterDto: CreateCharacterDto) {
+    return await this.characterService.create(createCharacterDto);
   }
 
   @Get()
-  findAll() {
-    return this.characterService.findAll();
+  async findAll() {
+    return await this.characterService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.characterService.findOne(+id);
+  async findById(@Param('id') id: string) {
+    return await this.characterService.findById(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCharacterDto: UpdateCharacterDto) {
-    return this.characterService.update(+id, updateCharacterDto);
+  async update(@Param('id') id: string, @Body() updateCharacterDto: UpdateCharacterDto) {
+    return await this.characterService.update(id, updateCharacterDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.characterService.remove(+id);
+  async remove(@Param('id') id: string) {
+    return await this.characterService.remove(id);
   }
 }

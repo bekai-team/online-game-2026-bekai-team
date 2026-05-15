@@ -1,1 +1,13 @@
-export class Character {}
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+
+@Entity()
+export class Character {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @Column({ type: 'text', length: '100' })
+  name: string;
+
+  @Column({ type: 'int', default: 100 })
+  hp: number;
+}

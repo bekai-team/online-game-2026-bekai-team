@@ -1,6 +1,7 @@
 import { NpcAffilation } from 'src/shared/enums/npc-affilation.enum';
-import { Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
+@Entity()
 export class Npc {
   @PrimaryGeneratedColumn('uuid')
   id: string;

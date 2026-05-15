@@ -1,13 +1,14 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { CreateNpcDto } from './dto/create-npc.dto';
 import { UpdateNpcDto } from './dto/update-npc.dto';
 import { Npc } from './entities/npc.entity';
 import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class NpcService {
   constructor(
-    @Inject(Npc)
+    @InjectRepository(Npc)
     private readonly npcRepository: Repository<Npc>,
   ) {}
 

@@ -1,26 +1,35 @@
 import { Injectable } from '@nestjs/common';
 import { CreateCharacterDto } from './dto/create-character.dto';
 import { UpdateCharacterDto } from './dto/update-character.dto';
+import { Character } from 'src/character/entities/character.entity';
+import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class CharacterService {
-  create(createCharacterDto: CreateCharacterDto) {
-    return 'This action adds a new character';
+  constructor(
+    @InjectRepository(Character)
+    private characterRepository: Repository<Character>,
+  ) {}
+
+  async create(createCharacterDto: CreateCharacterDto) {
+    const character = this.characterRepository.create(createCharacterDto);
+    return await this.characterRepository.save(character);
   }
 
-  findAll() {
-    return `This action returns all character`;
+  async findAll() {
+    return await this.characterRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} character`;
+  async findById(id: string) {
+    return await this.characterRepository.findBy({ id: id });
   }
 
-  update(id: number, updateCharacterDto: UpdateCharacterDto) {
-    return `This action updates a #${id} character`;
+  async update(id: string, updateCharacterDto: UpdateCharacterDto) {
+    return await this.characterRepository.update(id, updateCharacterDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} character`;
+  async remove(id: string) {
+    return await this.characterRepository.delete(id);
   }
 }
