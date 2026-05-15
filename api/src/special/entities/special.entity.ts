@@ -5,24 +5,24 @@ export class Special {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'int', length: 10 })
+  @Column({ type: 'int' })
   strength: number;
 
-  @Column({ type: 'int', length: 10 })
+  @Column({ type: 'int' })
   perception: number;
 
-  @Column({ type: 'int', length: 10 })
+  @Column({ type: 'int' })
   endurance: number;
 
-  @Column({ type: 'int', length: 10 })
+  @Column({ type: 'int' })
   charisma: number;
 
-  @Column({ type: 'int', length: 10 })
+  @Column({ type: 'int' })
   intelligence: number;
 
-  @Column({ type: 'int', length: 10 })
+  @Column({ type: 'int' })
   agility: number;
 
-  @Column({ type: 'int', length: 10 })
+  @Column({ type: 'int' })
   luck: number;
 }

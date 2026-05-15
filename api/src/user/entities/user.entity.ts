@@ -6,13 +6,13 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ length: 50, unique: true })
+  @Column({ unique: true })
   username: string;
 
-  @Column({ length: 200, unique: true })
+  @Column({ unique: true })
   email: string;
 
-  @Column({ length: 100 })
+  @Column()
   password: string;
 
   @Column({ type: 'text', nullable: true })

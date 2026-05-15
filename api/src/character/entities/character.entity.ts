@@ -5,7 +5,7 @@ export class Character {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'text', length: '100' })
+  @Column({ type: 'text' })
   name: string;
 
   @Column({ type: 'int', default: 100 })
