@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dk472u8powdlh" path="res://scenes/background.tscn" id="1_8ln24"]
 [ext_resource type="Texture2D" uid="uid://bifjcwrrlltk3" path="res://assets/ui/logo.png" id="2_wu84c"]
 [ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="3_wu84c"]
-[ext_resource type="Script" uid="uid://djc3stvb7mtue" path="res://scripts/login_menu_btn.gd" id="5_8ln24"]
-[ext_resource type="Script" uid="uid://cwo1q0yyitvmd" path="res://scripts/register_menu_btn.gd" id="5_rtw2f"]
+[ext_resource type="Script" uid="uid://dm62hu472f0qk" path="res://scripts/login_menu_btn.gd" id="5_8ln24"]
+[ext_resource type="Script" uid="uid://bm6yorc8vb52b" path="res://scripts/register_menu_btn.gd" id="5_rtw2f"]
 
 [node name="Main Menu" type="Control" unique_id=936435750]
 layout_mode = 3
