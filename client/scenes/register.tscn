@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cjont6j7etxnu"]
 
-[ext_resource type="PackedScene" uid="uid://dk472u8powdlh" path="res://scenes/background.tscn" id="1_ul2ju"]
+[ext_resource type="Texture2D" uid="uid://cfuc4nxvkv2i0" path="res://assets/ui/bg2.png" id="1_n2w5e"]
 [ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="2_n2w5e"]
-[ext_resource type="Script" uid="uid://dk7gkigqfkhqr" path="res://scripts/register_req.gd" id="3_ul2ju"]
+[ext_resource type="Script" uid="uid://b1dcwy0id10m4" path="res://scripts/register_req.gd" id="3_ul2ju"]
 [ext_resource type="PackedScene" uid="uid://dmbjrfiiibfjd" path="res://scenes/menu_btn.tscn" id="4_n2w5e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0emk2"]
@@ -16,7 +16,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" parent="." unique_id=1971102390 instance=ExtResource("1_ul2ju")]
+[node name="Background" type="TextureRect" parent="." unique_id=1370960280]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_n2w5e")
+expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1365200361]
 layout_mode = 1
@@ -74,7 +88,7 @@ script = ExtResource("3_ul2ju")
 [node name="HTTPRequest" type="HTTPRequest" parent="PanelContainer/VBoxContainer/Button" unique_id=1354003393]
 
 [node name="Button" parent="." unique_id=348370857 instance=ExtResource("4_n2w5e")]
-layout_mode = 0
+layout_mode = 1
 offset_left = 9.0
 offset_top = 5.0
 offset_right = 92.0
