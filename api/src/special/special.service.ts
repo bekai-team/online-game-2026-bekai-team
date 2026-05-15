@@ -8,10 +8,10 @@ import { BaseSpecial } from './interfaces/base-special.interface';
 
 @Injectable()
 export class SpecialService {
+  private readonly totalPoints: number = 35;
   constructor(
     @InjectRepository(Special)
     private readonly specialRepository: Repository<Special>,
-    private readonly totalPoints: number = 35,
   ) {}
 
   private calculateTotalSpecialPoints(specialDto: any) {

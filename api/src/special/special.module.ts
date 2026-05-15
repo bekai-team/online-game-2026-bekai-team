@@ -8,6 +8,5 @@ import { Special } from './entities/special.entity';
   imports: [TypeOrmModule.forFeature([Special])],
   controllers: [SpecialController],
   providers: [SpecialService],
-  exports: [TypeOrmModule],
 })
 export class SpecialModule {}

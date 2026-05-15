@@ -9,7 +9,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 export class CharacterService {
   constructor(
     @InjectRepository(Character)
-    private characterRepository: Repository<Character>,
+    private readonly characterRepository: Repository<Character>,
   ) {}
 
   async create(createCharacterDto: CreateCharacterDto) {
