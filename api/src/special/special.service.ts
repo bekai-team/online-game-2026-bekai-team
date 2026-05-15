@@ -8,7 +8,7 @@ import { BaseSpecial } from './interfaces/base-special.interface';
 
 @Injectable()
 export class SpecialService {
-  private readonly totalPoints: number = 35;
+  private readonly totalPoints: number = 40;
   constructor(
     @InjectRepository(Special)
     private readonly specialRepository: Repository<Special>,
@@ -46,12 +46,6 @@ export class SpecialService {
   }
 
   async update(id: string, updateSpecialDto: UpdateSpecialDto) {
-    const calculatedPoints = this.calculateTotalSpecialPoints(updateSpecialDto);
-
-    if (calculatedPoints > this.totalPoints) {
-      throw new BadRequestException('Total points should not be bigger than 35');
-    }
-
     return await this.specialRepository.update(id, updateSpecialDto);
   }
 
