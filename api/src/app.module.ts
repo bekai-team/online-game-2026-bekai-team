@@ -8,6 +8,9 @@ import { TerminusModule } from '@nestjs/terminus';
 import { HttpModule } from '@nestjs/axios';
 import { HttpLoggerMiddleware } from './middlewares/http-logger/http-logger.middleware';
 import { NpcModule } from './npc/npc.module';
+import { LlmModule } from './llm/llm.module';
+import { QuestModule } from './quest/quest.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -19,6 +22,9 @@ import { NpcModule } from './npc/npc.module';
     TerminusModule,
     HttpModule,
     NpcModule,
+    AuthModule,
+    LlmModule,
+    QuestModule,
   ],
   controllers: [AppController],
   providers: [AppService],
