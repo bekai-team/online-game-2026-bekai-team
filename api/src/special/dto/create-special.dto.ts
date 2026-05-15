@@ -1,6 +1,7 @@
 import { IsNumber, Length } from 'class-validator';
+import { BaseSpecial } from '../interfaces/base-special.interface';
 
-export class CreateSpecialDto {
+export class CreateSpecialDto implements BaseSpecial {
   @IsNumber()
   @Length(0, 10)
   strength: number;
