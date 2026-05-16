@@ -15,6 +15,7 @@ import { CharacterModule } from './character/character.module';
 import { InventoryModule } from './inventory/inventory.module';
 import { SpecialModule } from './special/special.module';
 import { LocationModule } from './location/location.module';
+import { ItemModule } from './item/item.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { LocationModule } from './location/location.module';
     InventoryModule,
     SpecialModule,
     LocationModule,
+    ItemModule,
   ],
   controllers: [AppController],
   providers: [AppService],
