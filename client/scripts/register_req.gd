@@ -14,12 +14,12 @@ func _on_pressed() -> void:
 		"password": password_input.text
 	}
 	var body = JSON.stringify(signup_data)
-	var headers = ["Content-Type: application/json"] 
+	var headers = ["Content-Type: application/json"]
 	
 	if not http_request.request_completed.is_connected(_on_request_completed):
 		http_request.request_completed.connect(_on_request_completed)
 		
-	var url = "http://localhost:8080/api/auth/signup"
+	var url = "http://localhost:3000/api/auth/signup"
 	http_request.request(url, headers, HTTPClient.METHOD_POST, body)
 	print("Запит на реєстрацію відправлено...")
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dk472u8powdlh" path="res://scenes/background.tscn" id="1_ul2ju"]
 [ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="2_n2w5e"]
-[ext_resource type="Script" uid="uid://dk7gkigqfkhqr" path="res://scripts/register_req.gd" id="3_ul2ju"]
+[ext_resource type="Script" uid="uid://b1dcwy0id10m4" path="res://scripts/register_req.gd" id="3_ul2ju"]
 [ext_resource type="PackedScene" uid="uid://dmbjrfiiibfjd" path="res://scenes/menu_btn.tscn" id="4_n2w5e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0emk2"]
@@ -47,12 +47,12 @@ text = "Create a new account"
 label_settings = SubResource("LabelSettings_0emk2")
 horizontal_alignment = 1
 
-[node name="LineEdit3" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=2003328811]
+[node name="EmailInput" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=2003328811]
 layout_mode = 2
 placeholder_text = "Email"
 alignment = 1
 
-[node name="LineEdit2" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=2075430896]
+[node name="PasswordInput" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=2075430896]
 layout_mode = 2
 placeholder_text = "Password"
 alignment = 1

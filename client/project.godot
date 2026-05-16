@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 AcceptQuestBtn="*uid://dawe8qe6v8081"
 QuestManager="*uid://0g4gfsh38sei"
+SessionManager="*uid://dlccg2duie3dq"
 
 [display]
 
