@@ -8,27 +8,27 @@ export class InventoryController {
   constructor(private readonly inventoryService: InventoryService) {}
 
   @Post()
-  create(@Body() createInventoryDto: CreateInventoryDto) {
-    return this.inventoryService.create(createInventoryDto);
+  async create(@Body() createInventoryDto: CreateInventoryDto) {
+    return await this.inventoryService.create(createInventoryDto);
   }
 
   @Get()
-  findAll() {
-    return this.inventoryService.findAll();
+  async findAll() {
+    return await this.inventoryService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.inventoryService.findOne(+id);
+  async findById(@Param('id') id: string) {
+    return await this.inventoryService.findById(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateInventoryDto: UpdateInventoryDto) {
-    return this.inventoryService.update(+id, updateInventoryDto);
+  async update(@Param('id') id: string, @Body() updateInventoryDto: UpdateInventoryDto) {
+    return await this.inventoryService.update(id, updateInventoryDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.inventoryService.remove(+id);
+  async remove(@Param('id') id: string) {
+    return await this.inventoryService.remove(id);
   }
 }
