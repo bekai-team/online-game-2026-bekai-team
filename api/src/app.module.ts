@@ -14,6 +14,7 @@ import { AuthModule } from './auth/auth.module';
 import { CharacterModule } from './character/character.module';
 import { InventoryModule } from './inventory/inventory.module';
 import { SpecialModule } from './special/special.module';
+import { LocationModule } from './location/location.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { SpecialModule } from './special/special.module';
     CharacterModule,
     InventoryModule,
     SpecialModule,
+    LocationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
