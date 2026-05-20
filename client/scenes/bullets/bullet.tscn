@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://uuaurd0ap25w" path="res://assets/bullet/bullets.png" id="1_2flq5"]
 [ext_resource type="Script" uid="uid://celuja7pyjjyt" path="res://scripts/bullets/bullet.gd" id="1_5f1na"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f1na"]
+size = Vector2(10, 5.84375)
+
 [node name="Bullet" type="Node2D" unique_id=2026470791]
 script = ExtResource("1_5f1na")
 
@@ -13,3 +16,11 @@ region_rect = Rect2(387, 102, 10, 5)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=968286006]
 rect = Rect2(-5, -2, 10, 5)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=568585197]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=546766461]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_5f1na")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
