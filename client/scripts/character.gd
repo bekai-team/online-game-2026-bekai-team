@@ -3,9 +3,9 @@ extends CharacterBody2D
 class_name Character
 signal health_changed
 
-const SPEED = 30.0
 const MAX_HEALTH: int = 100
 var health: int = MAX_HEALTH
+const SPEED = 100.0
 var damage = 20
 var last_direction: String = "down"
 @onready var body: AnimatedSprite2D = $Skeleton/Body/Sprite

@@ -1,10 +1,10 @@
 extends Node2D
 
 @export var player: Character
-var healthBar: ProgressBar
+var healthBar: TextureProgressBar
 
 func _ready() -> void:
-	healthBar = $CanvasLayer/HealthBar
+	healthBar = $CanvasLayer/TextureProgressBar
 	player.health_changed.connect(update)
 	update()
 
