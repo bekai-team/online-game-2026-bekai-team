@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dmr27p7f5ismw"]
+
+[ext_resource type="Script" uid="uid://brd7wsutxelg5" path="res://scenes/game_ui_elements.gd" id="1_5w32q"]
+
+[node name="GameUiElements" type="Node2D" unique_id=931662554]
+script = ExtResource("1_5w32q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1760221140]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=569850125]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+offset_right = 145.0
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true

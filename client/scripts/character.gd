@@ -1,6 +1,11 @@
 extends CharacterBody2D
 
+class_name Character
+signal health_changed
+
 const SPEED = 30.0
+const MAX_HEALTH: int = 100
+var health: int = MAX_HEALTH
 var damage = 20
 var last_direction: String = "down"
 @onready var body: AnimatedSprite2D = $Skeleton/Body/Sprite
@@ -40,6 +45,13 @@ func animation_fliph(cond: bool):
 	body.flip_h = cond
 	upper.flip_h = cond
 	bottom.flip_h = cond
+	
+func take_damage(amount: int) -> void:
+	if health <= 0:
+		print('Stop fucking my ass!')
+		
+	health -= amount
+	health_changed.emit()
 
 func perform_attack():
 	set_physics_process(false)  # Stop movement during attack
