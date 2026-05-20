@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Character
+
 const SPEED = 100.0
 var damage = 20
 var last_direction: String = "down"
