@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bye5ipqspqq5a" path="res://assets/tilesets/water.png" id="4_k0juu"]
 [ext_resource type="Texture2D" uid="uid://ht02573jq0oc" path="res://assets/tilesets/Sidewalks.png" id="5_qfnet"]
 [ext_resource type="Texture2D" uid="uid://c8kklsu7acovu" path="res://assets/tilesets/UpdatedDarkRoad.png" id="6_i7141"]
+[ext_resource type="PackedScene" uid="uid://djnb0734wu0hg" path="res://scenes/weaponary/shotgun.tscn" id="3_k0juu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 resource_name = "Suburbs"
@@ -1931,3 +1932,7 @@ tile_set = SubResource("TileSet_q5onr")
 [node name="ElementsLayer" type="TileMapLayer" parent="WorldLayer" unique_id=901531915]
 tile_map_data = PackedByteArray("AAD5/wIAAQAEAA4AAAD5/wMAAQAEAA8AAAD6/wIAAQAFAA4AAAD6/wMAAQAFAA8AAAADAAcAAQAGAAwAAAADAAgAAQAGAA0AAAAEAAcAAQAHAAwAAAAEAAgAAQAHAA0AAAATAAMAAQAEAAwAAAATAAQAAQAEAA0AAAAUAAMAAQAFAAwAAAAUAAQAAQAFAA0AAAAeAAAAAQAPAAwAAAAeAAEAAQAPAA0AAAAeAP//AQAPAAoAAAA=")
 tile_set = SubResource("TileSet_xo05s")
+[node name="Shotgun" parent="Character" unique_id=1204966530 instance=ExtResource("3_k0juu")]
+z_index = 1
+position = Vector2(7.005, -9.06)
+scale = Vector2(0.46, 0.46)
