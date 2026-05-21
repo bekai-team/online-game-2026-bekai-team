@@ -15,7 +15,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(14, 3)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_irmqu"]
+radius = 33.13608
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6ptj"]
 atlas = ExtResource("7_3m5ht")
@@ -2006,8 +2007,8 @@ shape = SubResource("RectangleShape2D_0e48y")
 [node name="MeleeHitbox" type="Area2D" parent="." unique_id=762223400]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitbox" unique_id=1207987450]
-position = Vector2(31, -4)
-shape = SubResource("RectangleShape2D_wtcfe")
+position = Vector2(6, -13)
+shape = SubResource("CircleShape2D_irmqu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1663653708]
 visible = false
