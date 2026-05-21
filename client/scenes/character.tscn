@@ -1992,6 +1992,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irmqu"]
 size = Vector2(37, 56)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7eonc"]
+size = Vector2(41, 59)
+
 [node name="Character" type="CharacterBody2D" unique_id=1068875508]
 z_index = 1
 script = ExtResource("1_irmqu")
@@ -2048,8 +2051,14 @@ scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_f7e30")
 animation = &"walk_up"
 
-[node name="PickUpBox" type="Area2D" parent="." unique_id=193856697]
+[node name="BodyBox" type="Area2D" parent="." unique_id=193856697]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpBox" unique_id=617170288]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyBox" unique_id=617170288]
 position = Vector2(5.5, -11)
 shape = SubResource("RectangleShape2D_irmqu")
+
+[node name="PlayerPickupArea" type="Area2D" parent="." unique_id=2009908828]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPickupArea" unique_id=619728079]
+position = Vector2(5.5, -11.5)
+shape = SubResource("RectangleShape2D_7eonc")

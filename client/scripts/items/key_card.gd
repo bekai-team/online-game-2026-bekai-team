@@ -9,8 +9,9 @@ func _process(delta: float) -> void:
 	pick_logic()
 
 func pick_logic():
+	print(collider.get_overlapping_areas())
 	var objects: Array[Area2D] = collider.get_overlapping_areas()
 	
 	for object in objects:
-		print(object.name)
-		queue_free()
+		if object.name == 'PlayerPickupArea':
+			queue_free()
