@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmspm"]
 size = Vector2(127.5, 126)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5f3b"]
+size = Vector2(131.5, 134.5)
+
 [node name="Dummy" type="CharacterBody2D" unique_id=279426681]
 script = ExtResource("1_xmspm")
 
@@ -24,3 +27,9 @@ offset_top = 139.0
 offset_right = 1018.0
 offset_bottom = 174.0
 show_percentage = false
+
+[node name="BodyBox" type="Area2D" parent="." unique_id=899742616]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyBox" unique_id=677354122]
+position = Vector2(953.25, 252.75)
+shape = SubResource("RectangleShape2D_k5f3b")
