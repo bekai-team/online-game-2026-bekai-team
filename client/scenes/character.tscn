@@ -1989,6 +1989,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irmqu"]
+size = Vector2(37, 56)
+
 [node name="Character" type="CharacterBody2D" unique_id=1068875508]
 z_index = 1
 script = ExtResource("1_irmqu")
@@ -2044,3 +2047,9 @@ position = Vector2(6, -12)
 scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_f7e30")
 animation = &"walk_up"
+
+[node name="PickUpBox" type="Area2D" parent="." unique_id=193856697]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpBox" unique_id=617170288]
+position = Vector2(5.5, -11)
+shape = SubResource("RectangleShape2D_irmqu")

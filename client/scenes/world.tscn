@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ht02573jq0oc" path="res://assets/tilesets/Sidewalks.png" id="5_qfnet"]
 [ext_resource type="Texture2D" uid="uid://c8kklsu7acovu" path="res://assets/tilesets/UpdatedDarkRoad.png" id="6_i7141"]
 [ext_resource type="PackedScene" uid="uid://djnb0734wu0hg" path="res://scenes/weaponary/shotgun.tscn" id="3_k0juu"]
+[ext_resource type="PackedScene" path="res://scenes/game_ui_elements.tscn" id="4_k0juu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 resource_name = "Suburbs"
@@ -1936,3 +1937,9 @@ tile_set = SubResource("TileSet_xo05s")
 z_index = 1
 position = Vector2(7.005, -9.06)
 scale = Vector2(0.46, 0.46)
+
+[node name="KeyCard" parent="." unique_id=190453534 instance=ExtResource("4_k0juu")]
+position = Vector2(66, 206)
+
+[node name="GameUiElements" parent="." unique_id=931662554 node_paths=PackedStringArray("player") instance=ExtResource("4_k0juu")]
+player = NodePath("../Character")

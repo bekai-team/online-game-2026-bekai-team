@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+class_name Character
+signal health_changed
+
+const MAX_HEALTH: int = 100
+var health: int = MAX_HEALTH
 const SPEED = 100.0
 var damage = 20
 var last_direction: String = "down"
@@ -38,6 +43,13 @@ func animation_fliph(cond: bool):
 	body.flip_h = cond
 	upper.flip_h = cond
 	bottom.flip_h = cond
+	
+func take_damage(amount: int) -> void:
+	if health <= 0:
+		print('Stop fucking my ass!')
+		
+	health -= amount
+	health_changed.emit()
 
 func perform_attack():
 	animation_stop()
