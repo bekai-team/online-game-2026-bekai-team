@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://btyfpsj2hoedc"]
+
+[ext_resource type="Texture2D" uid="uid://dbkp57s4p1h74" path="res://assets/items/items.png" id="1_3tlup"]
+[ext_resource type="Script" uid="uid://dy1740yfh0g5i" path="res://scripts/items/heroine_medkit.gd" id="1_ulqp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulqp3"]
+size = Vector2(119.999985, 119.999985)
+
+[node name="HeroineMedkit" type="Node2D" unique_id=882391293]
+script = ExtResource("1_ulqp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1094563799]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_3tlup")
+region_enabled = true
+region_rect = Rect2(96, 0, 96, 98)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1896492466]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1293556138]
+position = Vector2(2.3841858e-07, 2.3841858e-07)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_ulqp3")

@@ -1,12 +1,14 @@
 extends Node2D
 
 @export var player: Character
-var healthBar: TextureProgressBar
+@onready var healthBar: TextureProgressBar = $CanvasLayer/TextureProgressBar
 
 func _ready() -> void:
-	healthBar = $CanvasLayer/TextureProgressBar
-	player.health_changed.connect(update)
-	update()
+	if player:
+		player.health_changed.connect(update)
+		update()
+	else:
+		push_error("UI could not find the Player node in the scene tree!")
 
 func _process(delta: float) -> void:
 	pass
