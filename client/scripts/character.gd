@@ -29,8 +29,6 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	
-
-	
 func animation_play(anim: String):
 	body.play(anim)
 	upper.play(anim)
@@ -54,7 +52,6 @@ func take_damage(amount: int) -> void:
 	health_changed.emit()
 
 func perform_attack():
-	set_physics_process(false)  # Stop movement during attack
 	animation_stop()
 	animation_play("punch_" + last_direction)
 	if body.is_playing():

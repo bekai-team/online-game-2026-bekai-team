@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://djnb0734wu0hg"]
+
+[ext_resource type="Script" uid="uid://vexp002o4rlt" path="res://scripts/weaponary/gun_rotation.gd" id="1_bkjqd"]
+[ext_resource type="Texture2D" uid="uid://b27n7kt2b7ixl" path="res://assets/weaponary/shotguns.png" id="1_h63u7"]
+[ext_resource type="AudioStream" uid="uid://bdgwnq8u1t184" path="res://assets/sounds/shotgun_sound2.mp3" id="3_bkjqd"]
+[ext_resource type="Script" uid="uid://bjsgkepcb3ql7" path="res://scripts/weaponary/shoot_sound.gd" id="3_ixdbk"]
+
+[node name="Shotgun" type="Node2D" unique_id=1204966530]
+script = ExtResource("1_bkjqd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1956500729]
+position = Vector2(0, 2.3841858e-07)
+scale = Vector2(1.9000051, 1.9000052)
+texture = ExtResource("1_h63u7")
+offset = Vector2(10.265, -0.24)
+flip_h = true
+region_enabled = true
+region_rect = Rect2(1, 1, 48, 10)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=284215934]
+position = Vector2(64.605, -4.44)
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=547461369]
+stream = ExtResource("3_bkjqd")
+script = ExtResource("3_ixdbk")
