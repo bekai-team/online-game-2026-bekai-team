@@ -21,3 +21,5 @@ region_rect = Rect2(-1, 101, 97, 90)
 position = Vector2(2.3841858e-07, 2.3841858e-07)
 scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_i3fgd")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

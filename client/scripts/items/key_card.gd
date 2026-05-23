@@ -1,16 +1,12 @@
 extends Node2D
 
-@onready var collider: Area2D = $Area2D
-
 func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	pick_logic()
+	pass
 
-func pick_logic():
-	var objects: Array[Area2D] = collider.get_overlapping_areas()
-	
-	for object in objects:
-		print(object.name)
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print(area.name)
+	if area.name == 'PickUpBox':
 		queue_free()

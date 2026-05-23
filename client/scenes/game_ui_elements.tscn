@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dmr27p7f5ismw"]
 
-[ext_resource type="Script" uid="uid://brd7wsutxelg5" path="res://scenes/game_ui_elements.gd" id="1_5w32q"]
-[ext_resource type="Texture2D" uid="uid://c8g8fo1rf70kg" path="res://assets/ui/healthbarUnder.png" id="2_o3yxt"]
-[ext_resource type="Texture2D" uid="uid://s3v74mh75de3" path="res://assets/ui/healthbarProgress.png" id="3_10c01"]
+[ext_resource type="Script" uid="uid://bmuakeq4eta4f" path="res://scripts/ui/game_ui_elements.gd" id="1_o3yxt"]
+[ext_resource type="Texture2D" uid="uid://x647gl7htssj" path="res://assets/ui/healthbarUnder.png" id="2_o3yxt"]
+[ext_resource type="Texture2D" uid="uid://bd25ghusd2rlp" path="res://assets/ui/healthbarProgress.png" id="3_10c01"]
 
 [node name="GameUiElements" type="Node2D" unique_id=931662554]
-script = ExtResource("1_5w32q")
+script = ExtResource("1_o3yxt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1760221140]
 

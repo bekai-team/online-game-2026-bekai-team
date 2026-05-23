@@ -15,6 +15,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(14, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irmqu"]
+size = Vector2(37, 56)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_irmqu"]
 radius = 33.13608
 
@@ -1989,9 +1992,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_irmqu"]
-size = Vector2(37, 56)
-
 [node name="Character" type="CharacterBody2D" unique_id=1068875508]
 z_index = 1
 script = ExtResource("1_irmqu")
@@ -2003,6 +2003,12 @@ texture = ExtResource("1_wtcfe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=248044628]
 position = Vector2(6, 14.5)
 shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="PickUpBox" type="Area2D" parent="." unique_id=193856697]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpBox" unique_id=617170288]
+position = Vector2(5.5, -11)
+shape = SubResource("RectangleShape2D_irmqu")
 
 [node name="MeleeHitbox" type="Area2D" parent="." unique_id=762223400]
 
@@ -2048,8 +2054,5 @@ scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_f7e30")
 animation = &"walk_up"
 
-[node name="PickUpBox" type="Area2D" parent="." unique_id=193856697]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpBox" unique_id=617170288]
-position = Vector2(5.5, -11)
-shape = SubResource("RectangleShape2D_irmqu")
+[node name="HandsMarker" type="Marker2D" parent="." unique_id=656245132]
+position = Vector2(6, -8)
