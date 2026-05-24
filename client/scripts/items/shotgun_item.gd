@@ -15,6 +15,7 @@ func pick_logic(character: Node2D) -> void:
 	
 	if !hands_marker.get_children():
 		hands_marker.add_child(spawned_shotgun)
+		
 	queue_free()
 
 
