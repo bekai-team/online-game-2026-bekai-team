@@ -12,6 +12,7 @@ func update(item: InventoryItem) -> void:
 		item_sprite.visible = true
 		item_sprite.texture = item.texture
 		
-		var width: float = item_sprite.texture.get_width()
-		if width > 16:
+		var sprite_scale_x = item_sprite.scale.x
+		var width: float = item_sprite.get_rect().size.x
+		if sprite_scale_x >= 1.0:
 			item_sprite.scale *= (16.0 / width)

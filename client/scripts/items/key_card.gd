@@ -1,12 +1,5 @@
-extends Node2D
-
-func _ready() -> void:
-	pass
-
-func _process(delta: float) -> void:
-	pass
+extends Collectable
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print(area.name)
 	if area.name == 'PickUpBox':
-		queue_free()
+		collect(area.get_parent().inventory)
