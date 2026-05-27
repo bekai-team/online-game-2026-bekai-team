@@ -8,10 +8,13 @@ var health: int = MAX_HEALTH
 const SPEED = 100.0
 var damage = 20
 var last_direction: String = "down"
+
 @onready var body: AnimatedSprite2D = $Skeleton/Body/Sprite
 @onready var upper: AnimatedSprite2D = $Skeleton/Upper/Sprite
 @onready var bottom: AnimatedSprite2D = $Skeleton/Bottom/Sprite
 @onready var hitbox = $MeleeHitbox
+
+@export var inventory: Inventory
 
 func _ready() -> void:
 	body.frame = 0

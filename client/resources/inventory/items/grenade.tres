@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://cg7tvot2i2823"]
+
+[ext_resource type="Script" uid="uid://ldodkhocov8u" path="res://scripts/ui/inventory_item.gd" id="1_aukie"]
+[ext_resource type="Texture2D" uid="uid://dbkp57s4p1h74" path="res://assets/items/items.png" id="2_vtf3t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7dv3"]
+atlas = ExtResource("2_vtf3t")
+region = Rect2(0, 102, 96, 96)
+
+[resource]
+script = ExtResource("1_aukie")
+name = "grenade"
+texture = SubResource("AtlasTexture_u7dv3")
+metadata/_custom_type_script = "uid://ldodkhocov8u"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://cj56bg4wsvocy"]
+
+[ext_resource type="Script" uid="uid://ldodkhocov8u" path="res://scripts/ui/inventory_item.gd" id="1_acxmn"]
+[ext_resource type="Texture2D" uid="uid://dbkp57s4p1h74" path="res://assets/items/items.png" id="2_q7dro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlrc6"]
+atlas = ExtResource("2_q7dro")
+region = Rect2(96, 0, 96, 96)
+
+[resource]
+script = ExtResource("1_acxmn")
+name = "HeroineMedkit"
+texture = SubResource("AtlasTexture_xlrc6")
+metadata/_custom_type_script = "uid://ldodkhocov8u"
