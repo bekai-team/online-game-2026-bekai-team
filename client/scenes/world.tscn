@@ -344,3 +344,11 @@ item_res = ExtResource("9_e3hyu")
 [node name="KeyCard" parent="." unique_id=190453534 instance=ExtResource("9_w7kh3")]
 position = Vector2(173, 225)
 item_res = ExtResource("11_e3hyu")
+
+[node name="HeroineMedkit2" parent="." unique_id=1649576000 instance=ExtResource("8_7r4gi")]
+position = Vector2(210, 220)
+item_res = ExtResource("9_e3hyu")
+
+[node name="HeroineMedkit3" parent="." unique_id=1223823071 instance=ExtResource("8_7r4gi")]
+position = Vector2(196, 188)
+item_res = ExtResource("9_e3hyu")
