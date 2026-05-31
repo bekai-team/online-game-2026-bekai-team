@@ -13,6 +13,10 @@ bg_color = Color(0.88, 0.22879998, 0.41330665, 0.78431374)
 border_color = Color(0.3254902, 0.92156863, 0.89411765, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2jlf"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
 bg_color = Color(0.043137256, 0, 0.105882354, 1)
 border_width_left = 3
 border_width_top = 3
@@ -49,7 +53,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.5019608)
 
 [node name="ModalWindow" type="PanelContainer" parent="." unique_id=331748414]
-custom_minimum_size = Vector2(600, 350)
+custom_minimum_size = Vector2(400, 150)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -66,12 +70,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_omdth")
 
 [node name="MainVBox" type="VBoxContainer" parent="ModalWindow" unique_id=1563010907]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 8
 
 [node name="TopHBox" type="HBoxContainer" parent="ModalWindow/MainVBox" unique_id=1922183124]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
 [node name="AvatarFrame" type="PanelContainer" parent="ModalWindow/MainVBox/TopHBox" unique_id=941874061]
 custom_minimum_size = Vector2(140, 140)
@@ -97,28 +101,28 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_yn4um")
 theme_override_fonts/bold_font = ExtResource("2_yn4um")
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
 
 [node name="ButtonHBox" type="HBoxContainer" parent="ModalWindow/MainVBox" unique_id=1771336793]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="KillButton" type="Button" parent="ModalWindow/MainVBox/ButtonHBox" unique_id=1329673236]
-custom_minimum_size = Vector2(120, 20)
+custom_minimum_size = Vector2(60, 10)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_yn4um")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_r2jlf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m4jro")
 text = "Kill"
 
 [node name="RecruitButton" type="Button" parent="ModalWindow/MainVBox/ButtonHBox" unique_id=1709660490]
-custom_minimum_size = Vector2(120, 20)
+custom_minimum_size = Vector2(60, 10)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_yn4um")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_r2jlf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m4jro")
 text = "Recruit"
@@ -128,5 +132,5 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_yn4um")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_r2jlf")
