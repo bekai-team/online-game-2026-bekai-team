@@ -13,6 +13,10 @@ func _ready() -> void:
 	upper.frame = 0
 	bottom.frame = 0
 	animation_play("idle_down")
+	
+	# ЗАСТОСОВУЄМО ЗБЕРЕЖЕНІ КОЛЬОРИ
+	upper.modulate = Global.player_clothes_color
+	body.modulate = Global.player_skin_color
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
