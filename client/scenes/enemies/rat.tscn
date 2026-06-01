@@ -79,7 +79,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -118,7 +118,8 @@ script = ExtResource("1_qn0ow")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1406719294]
 sprite_frames = SubResource("SpriteFrames_ujef0")
-animation = &"left"
+animation = &"up"
+frame_progress = 0.74663645
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=656868215]
 position = Vector2(-2, 18)
@@ -127,6 +128,3 @@ shape = SubResource("RectangleShape2D_1spx8")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=236952238]
 path_desired_distance = 4.0
 path_max_distance = 10.0
-
-[node name="Timer" type="Timer" parent="." unique_id=388566823]
-one_shot = true
