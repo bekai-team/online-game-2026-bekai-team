@@ -1,0 +1,398 @@
+[gd_scene format=3 uid="uid://du7piqvi2tj7"]
+
+[ext_resource type="Script" path="res://scenes/character_editor.gd" id="1_4itvm"]
+[ext_resource type="PackedScene" uid="uid://cm43dfutshc5u" path="res://scenes/character.tscn" id="1_q0e82"]
+[ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="2_4itvm"]
+[ext_resource type="PackedScene" uid="uid://dk472u8powdlh" path="res://scenes/background.tscn" id="2_tftlr"]
+[ext_resource type="Texture2D" uid="uid://dgrr6icu758m3" path="res://assets/ui/window.png" id="4_0inf3"]
+[ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="5_0inf3"]
+[ext_resource type="Texture2D" uid="uid://7gnsh0xayj1m" path="res://assets/ui/btn.png" id="6_ybc78"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ucl3"]
+texture = ExtResource("4_0inf3")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7wju"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.03137255, 0.30980393, 0.39215687, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0e82"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4itvm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ghhc"]
+texture = ExtResource("6_ybc78")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0inf3"]
+bg_color = Color(0.043137256, 0, 0.105882354, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.3254902, 0.92156863, 0.89411765, 1)
+shadow_color = Color(0.3254902, 0.92156863, 0.89411765, 1)
+shadow_size = 4
+
+[node name="CharacterEditor" type="Control" unique_id=1720206713]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4itvm")
+
+[node name="Background" parent="." unique_id=1971102390 instance=ExtResource("2_tftlr")]
+
+[node name="MainMargin" type="MarginContainer" parent="." unique_id=990460486]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMargin" unique_id=1195849158]
+layout_mode = 2
+
+[node name="TopSection" type="HBoxContainer" parent="MainMargin/VBoxContainer" unique_id=2017269432]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="AvatarBackground" type="ColorRect" parent="MainMargin/VBoxContainer/TopSection" unique_id=1167439875]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AvatarPreview" type="SubViewportContainer" parent="MainMargin/VBoxContainer/TopSection/AvatarBackground" unique_id=27780068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="MainMargin/VBoxContainer/TopSection/AvatarBackground/AvatarPreview" unique_id=1200377344]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(238, 220)
+render_target_update_mode = 4
+
+[node name="Character" parent="MainMargin/VBoxContainer/TopSection/AvatarBackground/AvatarPreview/SubViewport" unique_id=1068875508 instance=ExtResource("1_q0e82")]
+position = Vector2(111, 129)
+
+[node name="SettingsPanel" type="PanelContainer" parent="MainMargin/VBoxContainer/TopSection" unique_id=1905805774]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_0ucl3")
+
+[node name="SettingsColumns" type="HBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel" unique_id=1692779024]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="LeftCol" type="VBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns" unique_id=1581836051]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="OptionButton" type="OptionButton" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol" unique_id=1422318184]
+layout_mode = 2
+theme = ExtResource("5_0inf3")
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j7wju")
+selected = 0
+item_count = 1
+popup/item_0/text = "Hair Style"
+popup/item_0/id = 0
+
+[node name="OptionButton2" type="OptionButton" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol" unique_id=18037500]
+layout_mode = 2
+theme = ExtResource("5_0inf3")
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j7wju")
+selected = 0
+item_count = 1
+popup/item_0/text = "Hair Color"
+popup/item_0/id = 0
+
+[node name="OptionButton3" type="OptionButton" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol" unique_id=690881393]
+layout_mode = 2
+theme = ExtResource("5_0inf3")
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j7wju")
+selected = 0
+item_count = 1
+popup/item_0/text = "Clothes Style"
+popup/item_0/id = 0
+
+[node name="OptionButton4" type="OptionButton" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol" unique_id=2134472225]
+layout_mode = 2
+theme = ExtResource("5_0inf3")
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j7wju")
+selected = 0
+item_count = 1
+popup/item_0/text = "Clothes Color"
+popup/item_0/id = 0
+
+[node name="OptionButton5" type="OptionButton" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol" unique_id=1326146041]
+layout_mode = 2
+theme = ExtResource("5_0inf3")
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j7wju")
+selected = 0
+item_count = 1
+popup/item_0/text = "Skin Tone"
+popup/item_0/id = 0
+
+[node name="RightCol" type="VBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns" unique_id=1835081403]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="StatRow" type="HBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol" unique_id=1327490399]
+layout_mode = 2
+
+[node name="StatName" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow" unique_id=1783254919]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_font_sizes/font_size = 16
+text = "Strength"
+
+[node name="MinusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow" unique_id=575856564]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0e82")
+text = "<"
+
+[node name="StatValue" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow" unique_id=522202525]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+text = "5"
+
+[node name="PlusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow" unique_id=1768294661]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4itvm")
+text = ">"
+
+[node name="StatRow2" type="HBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol" unique_id=1907644888]
+layout_mode = 2
+
+[node name="StatName" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow2" unique_id=1184787273]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_font_sizes/font_size = 16
+text = "Perception"
+
+[node name="MinusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow2" unique_id=195051761]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0e82")
+text = "<"
+
+[node name="StatValue" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow2" unique_id=1241572741]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+text = "5"
+
+[node name="PlusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow2" unique_id=847165713]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4itvm")
+text = ">"
+
+[node name="StatRow3" type="HBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol" unique_id=522394519]
+layout_mode = 2
+
+[node name="StatName" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow3" unique_id=1177564784]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_font_sizes/font_size = 16
+text = "Endurance"
+
+[node name="MinusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow3" unique_id=321271920]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0e82")
+text = "<"
+
+[node name="StatValue" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow3" unique_id=751879916]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+text = "5"
+
+[node name="PlusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow3" unique_id=513070922]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4itvm")
+text = ">"
+
+[node name="StatRow4" type="HBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol" unique_id=1558786312]
+layout_mode = 2
+
+[node name="StatName" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow4" unique_id=908907590]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_font_sizes/font_size = 16
+text = "Charisma"
+
+[node name="MinusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow4" unique_id=1470731988]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0e82")
+text = "<"
+
+[node name="StatValue" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow4" unique_id=873219708]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+text = "5"
+
+[node name="PlusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow4" unique_id=1674243498]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4itvm")
+text = ">"
+
+[node name="StatRow5" type="HBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol" unique_id=380547881]
+layout_mode = 2
+
+[node name="StatName" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow5" unique_id=578155522]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_font_sizes/font_size = 16
+text = "Intelligence"
+
+[node name="MinusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow5" unique_id=41153581]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0e82")
+text = "<"
+
+[node name="StatValue" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow5" unique_id=1880612658]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+text = "5"
+
+[node name="PlusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow5" unique_id=1328762777]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4itvm")
+text = ">"
+
+[node name="StatRow6" type="HBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol" unique_id=416156528]
+layout_mode = 2
+
+[node name="StatName" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow6" unique_id=654287994]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_font_sizes/font_size = 16
+text = "Agility"
+
+[node name="MinusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow6" unique_id=564937032]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0e82")
+text = "<"
+
+[node name="StatValue" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow6" unique_id=1538196649]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+text = "5"
+
+[node name="PlusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow6" unique_id=451858588]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4itvm")
+text = ">"
+
+[node name="StatRow7" type="HBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol" unique_id=502348097]
+layout_mode = 2
+
+[node name="StatName" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow7" unique_id=152509783]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_font_sizes/font_size = 16
+text = "Luck"
+
+[node name="MinusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow7" unique_id=2018042518]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0e82")
+text = "<"
+
+[node name="StatValue" type="Label" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow7" unique_id=886320203]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+text = "5"
+
+[node name="PlusBtn" type="Button" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol/StatRow7" unique_id=684418111]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4itvm")
+text = ">"
+
+[node name="BottomSection" type="CenterContainer" parent="MainMargin/VBoxContainer" unique_id=1161868349]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StartButton" type="Button" parent="MainMargin/VBoxContainer/BottomSection" unique_id=2024302014]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4itvm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8ghhc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0inf3")
+text = "START ADVENTURE"
