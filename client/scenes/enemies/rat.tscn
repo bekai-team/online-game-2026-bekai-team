@@ -119,7 +119,7 @@ script = ExtResource("1_qn0ow")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1406719294]
 sprite_frames = SubResource("SpriteFrames_ujef0")
 animation = &"up"
-frame_progress = 0.74663645
+frame_progress = 0.37690076
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=656868215]
 position = Vector2(-2, 18)
@@ -128,3 +128,10 @@ shape = SubResource("RectangleShape2D_1spx8")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=236952238]
 path_desired_distance = 4.0
 path_max_distance = 10.0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=572135645]
+offset_left = -13.0
+offset_top = -15.0
+offset_right = 12.799999
+offset_bottom = -8.0
+show_percentage = false

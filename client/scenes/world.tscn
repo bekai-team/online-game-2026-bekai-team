@@ -346,3 +346,11 @@ navigation_polygon = SubResource("NavigationPolygon_71j4m")
 [node name="Rat" parent="." unique_id=1123250853 node_paths=PackedStringArray("Goal") instance=ExtResource("6_qfnet")]
 position = Vector2(221, 201)
 Goal = NodePath("../Character")
+
+[node name="Rat2" parent="." unique_id=1587152386 node_paths=PackedStringArray("Goal") instance=ExtResource("6_qfnet")]
+position = Vector2(160, 65)
+Goal = NodePath("../Character")
+
+[node name="Rat3" parent="." unique_id=368223712 node_paths=PackedStringArray("Goal") instance=ExtResource("6_qfnet")]
+position = Vector2(243, 76)
+Goal = NodePath("../Character")
