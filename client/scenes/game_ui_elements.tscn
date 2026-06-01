@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://dmr27p7f5ismw"]
 
-[ext_resource type="Script" uid="uid://brd7wsutxelg5" path="res://scenes/game_ui_elements.gd" id="1_5w32q"]
-[ext_resource type="Texture2D" uid="uid://c8g8fo1rf70kg" path="res://assets/ui/healthbarUnder.png" id="2_o3yxt"]
-[ext_resource type="Texture2D" uid="uid://s3v74mh75de3" path="res://assets/ui/healthbarProgress.png" id="3_10c01"]
+[ext_resource type="Script" uid="uid://bmuakeq4eta4f" path="res://scripts/ui/game_ui_elements.gd" id="1_o3yxt"]
+[ext_resource type="Script" uid="uid://vd2d0hbitgo4" path="res://scripts/ui/canvas_layer.gd" id="2_a135k"]
+[ext_resource type="Texture2D" uid="uid://x647gl7htssj" path="res://assets/ui/healthbarUnder.png" id="2_o3yxt"]
+[ext_resource type="Texture2D" uid="uid://bd25ghusd2rlp" path="res://assets/ui/healthbarProgress.png" id="3_10c01"]
+[ext_resource type="PackedScene" uid="uid://01ac8lhhb5vs" path="res://scenes/inventory_ui.tscn" id="4_10c01"]
 
 [node name="GameUiElements" type="Node2D" unique_id=931662554]
-script = ExtResource("1_5w32q")
+script = ExtResource("1_o3yxt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1760221140]
+script = ExtResource("2_a135k")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=366260269]
 anchors_preset = 2
@@ -21,3 +24,14 @@ grow_vertical = 0
 scale = Vector2(2.51, 2.51)
 texture_under = ExtResource("2_o3yxt")
 texture_progress = ExtResource("3_10c01")
+
+[node name="InventoryUi" parent="CanvasLayer" unique_id=1252145754 instance=ExtResource("4_10c01")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -77.0
+offset_right = 89.0
+offset_bottom = 77.0
