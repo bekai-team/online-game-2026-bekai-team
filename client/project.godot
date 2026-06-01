@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 SessionManager="*uid://dlccg2duie3dq"
+Global="*uid://diel8hoqcehn"
 
 [display]
 

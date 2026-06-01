@@ -13,6 +13,9 @@ func _ready() -> void:
 	upper.frame = 0
 	bottom.frame = 0
 	animation_play("idle_down")
+	
+	upper.modulate = Global.player_clothes_color
+	body.modulate = Global.player_skin_color
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -57,16 +60,12 @@ func _on_attack_animation_finished():
 	
 func update_animation(input: Vector2) -> void:
 	if input != Vector2.ZERO:
-		# Determine the primary direction based on input
 		if abs(input.x) > abs(input.y):
 			last_direction = "side"
 			animation_fliph(input.x < 0)
 		else:
 			last_direction = "up" if input.y < 0 else "down"
 		
-		# Play the animation
 		animation_play("walk_" + last_direction)
 	else:
-		# When stopping, stay on the walk animation but pause it on the 'idle' frame
-		# Usually frame 0 is the neutral standing pose in these sprite sheets
 		animation_play("idle_" + last_direction)
