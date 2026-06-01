@@ -30,6 +30,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Maditron_CharacterBody2D"
 
+[global_group]
+
+navigation_polygon_source_geometry_group=""
+
 [input]
 
 move_up={
