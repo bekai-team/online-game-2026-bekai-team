@@ -4,21 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://d01da53tldu8l" path="res://scenes/slot_hotbar_ui.tscn" id="2_e6kfb"]
 
 [node name="HotbarUi" type="Control" unique_id=151490397]
-custom_minimum_size = Vector2(260, 40)
+custom_minimum_size = Vector2(260, 30)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -380.0
-offset_bottom = -320.0
+offset_bottom = -330.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1382058630]
 modulate = Color(0.5676728, 0.3403929, 1.0914046, 0.79607844)
-custom_minimum_size = Vector2(260, 30)
+custom_minimum_size = Vector2(250, 30)
 layout_mode = 0
-offset_right = 260.0
+offset_right = 250.0
 offset_bottom = 30.0
 texture = ExtResource("1_l8020")
 patch_margin_left = 6
@@ -27,11 +27,11 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect" unique_id=6142426]
-custom_minimum_size = Vector2(250, 20)
+custom_minimum_size = Vector2(240, 20)
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
-offset_right = 255.0
+offset_right = 245.0
 offset_bottom = 25.0
 alignment = 1
 
