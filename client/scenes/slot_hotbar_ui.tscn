@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d01da53tldu8l"]
+
+[ext_resource type="Texture2D" uid="uid://b7w7x5u43646p" path="res://assets/ui/inventorySlot.png" id="2_pmjig"]
+
+[sub_resource type="SystemFont" id="SystemFont_vlebx"]
+subpixel_positioning = 0
+
+[node name="SlotHotbar" type="Panel" unique_id=1767049876]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="background" type="Sprite2D" parent="." unique_id=1385447502]
+texture = ExtResource("2_pmjig")
+centered = false
+vframes = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1257692762]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=723034995]
+layout_mode = 2
+
+[node name="item" type="Sprite2D" parent="CenterContainer/Panel" unique_id=2074563266]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel" unique_id=1421420588]
+custom_minimum_size = Vector2(11, 14)
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 10.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_vlebx")
+theme_override_font_sizes/font_size = 8
+text = "99"

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cm30nqxkklfo7"]
+
+[ext_resource type="Texture2D" uid="uid://72pessqxbmnp" path="res://assets/ui/InventoryRect.png" id="1_l8020"]
+[ext_resource type="PackedScene" uid="uid://d01da53tldu8l" path="res://scenes/slot_hotbar_ui.tscn" id="2_e6kfb"]
+
+[node name="HotbarUi" type="Control" unique_id=151490397]
+custom_minimum_size = Vector2(260, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -380.0
+offset_bottom = -320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1382058630]
+modulate = Color(0.5676728, 0.3403929, 1.0914046, 0.79607844)
+custom_minimum_size = Vector2(260, 30)
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 30.0
+texture = ExtResource("1_l8020")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect" unique_id=6142426]
+custom_minimum_size = Vector2(250, 20)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 255.0
+offset_bottom = 25.0
+alignment = 1
+
+[node name="SlotHotbar" parent="NinePatchRect/HBoxContainer" unique_id=1767049876 instance=ExtResource("2_e6kfb")]
+layout_mode = 2
+
+[node name="SlotHotbar2" parent="NinePatchRect/HBoxContainer" unique_id=447612282 instance=ExtResource("2_e6kfb")]
+layout_mode = 2
+
+[node name="SlotHotbar3" parent="NinePatchRect/HBoxContainer" unique_id=1000254376 instance=ExtResource("2_e6kfb")]
+layout_mode = 2
+
+[node name="SlotHotbar4" parent="NinePatchRect/HBoxContainer" unique_id=1026456938 instance=ExtResource("2_e6kfb")]
+layout_mode = 2
+
+[node name="SlotHotbar5" parent="NinePatchRect/HBoxContainer" unique_id=316086988 instance=ExtResource("2_e6kfb")]
+layout_mode = 2
+
+[node name="SlotHotbar6" parent="NinePatchRect/HBoxContainer" unique_id=1986603888 instance=ExtResource("2_e6kfb")]
+layout_mode = 2
+
+[node name="SlotHotbar7" parent="NinePatchRect/HBoxContainer" unique_id=403737048 instance=ExtResource("2_e6kfb")]
+layout_mode = 2
+
+[node name="SlotHotbar8" parent="NinePatchRect/HBoxContainer" unique_id=1571463865 instance=ExtResource("2_e6kfb")]
+layout_mode = 2
+
+[node name="SlotHotbar9" parent="NinePatchRect/HBoxContainer" unique_id=793812854 instance=ExtResource("2_e6kfb")]
+layout_mode = 2
+
+[node name="SlotHotbar10" parent="NinePatchRect/HBoxContainer" unique_id=1016484720 instance=ExtResource("2_e6kfb")]
+layout_mode = 2
