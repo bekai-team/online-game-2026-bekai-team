@@ -85,3 +85,11 @@ func update_animation(input: Vector2) -> void:
 		# When stopping, stay on the walk animation but pause it on the 'idle' frame
 		# Usually frame 0 is the neutral standing pose in these sprite sheets
 		animation_play("idle_" + last_direction)
+
+
+func _on_tree_entered() -> void:
+	set_multiplayer_authority(name.to_int())
+	if multiplayer.get_unique_id() == name.to_int():
+		$Camera2D.make_current()
+	else:
+		$Camera2D.enabled = false

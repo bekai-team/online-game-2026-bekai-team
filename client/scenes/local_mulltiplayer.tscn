@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://hheudkkopk2m"]
+
+[ext_resource type="PackedScene" uid="uid://dk472u8powdlh" path="res://scenes/background.tscn" id="1_l3ibb"]
+[ext_resource type="Script" uid="uid://fm1gut6q5qmm" path="res://scripts/multiplayer/local_mulltiplayer.gd" id="1_sl6sx"]
+[ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="2_sl6sx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_148qj"]
+font_size = 27
+
+[node name="LocalMulltiplayer" type="Control" unique_id=724442873]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sl6sx")
+
+[node name="Background" parent="." unique_id=1971102390 instance=ExtResource("1_l3ibb")]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=255171364]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -99.0
+offset_right = 132.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_sl6sx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=846804305]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_sl6sx")
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=169383583]
+layout_mode = 2
+theme = ExtResource("2_sl6sx")
+text = "Host"
+label_settings = SubResource("LabelSettings_148qj")
+horizontal_alignment = 1
+
+[node name="AddressInput" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=2092865574]
+layout_mode = 2
+placeholder_text = "Address"
+alignment = 1
+
+[node name="PortInput" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=1798093144]
+layout_mode = 2
+placeholder_text = "Port"
+alignment = 1
+
+[node name="MaxPlayersInput" type="LineEdit" parent="PanelContainer/VBoxContainer" unique_id=2087228093]
+layout_mode = 2
+placeholder_text = "Max Players"
+alignment = 1
+
+[node name="CreateHostButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=608533979]
+layout_mode = 2
+text = "Create Host"
+
+[node name="JoinButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1849708349]
+layout_mode = 2
+text = "Join a server "
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/CreateHostButton" to="." method="_on_create_host_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/JoinButton" to="." method="_on_join_button_pressed"]
