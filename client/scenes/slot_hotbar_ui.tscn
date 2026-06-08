@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d01da53tldu8l"]
 
+[ext_resource type="Script" uid="uid://d0ay02n0s5ds6" path="res://scripts/ui/slot_hotbar_ui.gd" id="1_wv4yf"]
 [ext_resource type="Texture2D" uid="uid://b7w7x5u43646p" path="res://assets/ui/inventorySlot.png" id="2_pmjig"]
 
 [sub_resource type="SystemFont" id="SystemFont_vlebx"]
@@ -10,6 +11,7 @@ self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(20, 20)
 offset_right = 20.0
 offset_bottom = 20.0
+script = ExtResource("1_wv4yf")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1385447502]
 texture = ExtResource("2_pmjig")

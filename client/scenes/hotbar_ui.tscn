@@ -1,24 +1,26 @@
 [gd_scene format=3 uid="uid://cm30nqxkklfo7"]
 
+[ext_resource type="Script" uid="uid://wln6fhr21i3g" path="res://scripts/ui/hotbar_ui.gd" id="1_8vnii"]
 [ext_resource type="Texture2D" uid="uid://72pessqxbmnp" path="res://assets/ui/InventoryRect.png" id="1_l8020"]
 [ext_resource type="PackedScene" uid="uid://d01da53tldu8l" path="res://scenes/slot_hotbar_ui.tscn" id="2_e6kfb"]
 
 [node name="HotbarUi" type="Control" unique_id=151490397]
-custom_minimum_size = Vector2(260, 30)
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -380.0
+offset_right = -440.0
 offset_bottom = -330.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8vnii")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1382058630]
-modulate = Color(0.5676728, 0.3403929, 1.0914046, 0.79607844)
-custom_minimum_size = Vector2(250, 30)
+modulate = Color(0.22745098, 0.59607846, 0.6431373, 0.81960785)
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 0
-offset_right = 250.0
+offset_right = 200.0
 offset_bottom = 30.0
 texture = ExtResource("1_l8020")
 patch_margin_left = 6
@@ -27,11 +29,11 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect" unique_id=6142426]
-custom_minimum_size = Vector2(240, 20)
+custom_minimum_size = Vector2(180, 20)
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
-offset_right = 245.0
+offset_right = 193.0
 offset_bottom = 25.0
 alignment = 1
 
@@ -57,10 +59,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="SlotHotbar8" parent="NinePatchRect/HBoxContainer" unique_id=1571463865 instance=ExtResource("2_e6kfb")]
-layout_mode = 2
-
-[node name="SlotHotbar9" parent="NinePatchRect/HBoxContainer" unique_id=793812854 instance=ExtResource("2_e6kfb")]
-layout_mode = 2
-
-[node name="SlotHotbar10" parent="NinePatchRect/HBoxContainer" unique_id=1016484720 instance=ExtResource("2_e6kfb")]
 layout_mode = 2
