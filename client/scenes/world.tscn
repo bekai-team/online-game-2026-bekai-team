@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cwolu7s836i3c" path="res://scenes/dummy.tscn" id="2_tlwt5"]
 [ext_resource type="Texture2D" uid="uid://dflqssf48cyqh" path="res://assets/tilesets/suburbs.png" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dmr27p7f5ismw" path="res://scenes/game_ui_elements.tscn" id="4_k0juu"]
-[ext_resource type="PackedScene" uid="uid://bkju8m4jr3l63" path="res://scenes/items/shotgun_item.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" path="res://scenes/items/shotgun_item.tscn" id="5_71j4m"]
 [ext_resource type="Texture2D" uid="uid://csglyvgqgg686" path="res://assets/tilesets/Sidewalks.png" id="5_qfnet"]
 [ext_resource type="Texture2D" uid="uid://b5cw8l8ejfl8k" path="res://assets/tilesets/UpdatedDarkRoad.png" id="6_i7141"]
 [ext_resource type="PackedScene" uid="uid://q3sjy1sl22rf" path="res://scenes/items/grenade.tscn" id="6_qfnet"]

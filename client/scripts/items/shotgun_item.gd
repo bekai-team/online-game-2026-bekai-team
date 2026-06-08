@@ -1,13 +1,7 @@
-extends Node2D
+extends Collectable
 
 @onready var collider: Area2D = $Area2D
 const SHOTGUN = preload("res://scenes/weaponary/shotgun.tscn")
-
-func _ready() -> void:
-	pass
-
-func _process(delta: float) -> void:
-	pass
 
 func pick_logic(character: Node2D) -> void:
 	var spawned_shotgun = SHOTGUN.instantiate()
@@ -18,8 +12,8 @@ func pick_logic(character: Node2D) -> void:
 		
 	queue_free()
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == 'PickUpBox':
 		var character: Node2D = area.get_parent()
 		pick_logic(character)
+		collect(area.get_parent().inventory)

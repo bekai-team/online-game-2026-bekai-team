@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bkju8m4jr3l63"]
+[gd_scene format=3 uid="uid://4wccroanbapb"]
 
-[ext_resource type="Script" uid="uid://dgsnm1taewqwh" path="res://scripts/items/shotgun_item.gd" id="1_f08q6"]
+[ext_resource type="Script" uid="uid://dmd0kps2nwau5" path="res://scripts/items/shotgun_item.gd" id="1_f08q6"]
 [ext_resource type="Texture2D" uid="uid://b2a13upm1fu1t" path="res://assets/weaponary/shotguns.png" id="1_gpx0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpx0i"]
