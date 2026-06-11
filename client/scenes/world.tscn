@@ -1988,3 +1988,4 @@ scale = Vector2(2.52, 2.52)
 spawn_object = ExtResource("15_xo05s")
 followed_to = NodePath("../Character")
 count = 5
+is_destroyable_on_enter = true
