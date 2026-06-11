@@ -235,3 +235,8 @@ texture = ExtResource("1_d1od2")
 [node name="Character" parent="." unique_id=1068875508 instance=ExtResource("2_w6xti")]
 position = Vector2(378, 190.00002)
 scale = Vector2(1.345, 1.345)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=767235231]
+color = Color(0.09430925, 0.10314881, 0.18438321, 1)
+energy = 0.4
+blend_mode = 2
