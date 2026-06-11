@@ -20,6 +20,15 @@ texture = ExtResource("1_nfd3l")
 centered = false
 vframes = 2
 
+[node name="SlotItemContextMenu" parent="." unique_id=540092172 instance=ExtResource("4_sy3s5")]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 70.0
+
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1257692762]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
@@ -48,15 +57,6 @@ text = "99"
 visible = false
 position = Vector2(10, 10)
 texture = ExtResource("3_wclmh")
-
-[node name="SlotItemContextMenu" parent="." unique_id=540092172 instance=ExtResource("4_sy3s5")]
-visible = false
-z_index = 2
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 90.0
-offset_bottom = 70.0
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
