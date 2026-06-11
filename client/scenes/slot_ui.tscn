@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://ohmkpmamql1f"]
 
 [ext_resource type="Texture2D" uid="uid://d06v51e55d5ip" path="res://assets/ui/inventorySlot.png" id="1_nfd3l"]
-[ext_resource type="Script" uid="uid://jj8c5enxop70" path="res://scripts/ui/slot_ui.gd" id="1_vlebx"]
+[ext_resource type="Script" uid="uid://csjuq6aeicifk" path="res://scripts/ui/slot_ui.gd" id="1_vlebx"]
+[ext_resource type="Texture2D" uid="uid://cg2ide2di3s20" path="res://assets/ui/hotbar_selector.png" id="3_wclmh"]
 
 [sub_resource type="SystemFont" id="SystemFont_vlebx"]
+subpixel_positioning = 0
 
 [node name="Slot" type="Panel" unique_id=1767049876]
 self_modulate = Color(1, 1, 1, 0)
@@ -40,3 +42,11 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_vlebx")
 theme_override_font_sizes/font_size = 8
 text = "99"
+
+[node name="HoverBorder" type="Sprite2D" parent="CenterContainer" unique_id=901391844]
+visible = false
+position = Vector2(10, 10)
+texture = ExtResource("3_wclmh")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

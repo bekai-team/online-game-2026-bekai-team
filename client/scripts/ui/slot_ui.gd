@@ -3,6 +3,7 @@ extends Panel
 @onready var background_sprite: Sprite2D = $background
 @onready var item_sprite: Sprite2D = $CenterContainer/Panel/item
 @onready var amount_label: Label = $CenterContainer/Panel/Label
+@onready var hover_border: Sprite2D = $CenterContainer/HoverBorder
 
 func update(slot: InventorySlot) -> void:
 	if !slot.item:
@@ -20,3 +21,11 @@ func update(slot: InventorySlot) -> void:
 		var width: float = item_sprite.get_rect().size.x
 		if sprite_scale_x >= 1.0:
 			item_sprite.scale *= (16.0 / width)
+
+
+func _on_mouse_entered() -> void:
+	hover_border.visible = true
+	
+
+func _on_mouse_exited() -> void:
+	hover_border.visible = false
