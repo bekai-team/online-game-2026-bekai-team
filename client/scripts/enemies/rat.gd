@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Rat
+
 const movement_speed: float = 50.0
 const max_hp = 100
 var current_hp = 100
