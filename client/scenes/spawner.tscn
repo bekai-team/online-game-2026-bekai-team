@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dyx8dbydybjxs" path="res://scripts/spawner/spawner.gd" id="1_2vbf6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ik2nu"]
-radius = 38.013157
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vbf6"]
+radius = 31.0
 
 [node name="Spawner" type="Node2D" unique_id=1519128286]
 script = ExtResource("1_2vbf6")
@@ -11,6 +11,6 @@ script = ExtResource("1_2vbf6")
 [node name="SpawnArea" type="Area2D" parent="." unique_id=1689190186]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea" unique_id=820915042]
-shape = SubResource("CircleShape2D_ik2nu")
+shape = SubResource("CircleShape2D_2vbf6")
 
 [connection signal="area_entered" from="SpawnArea" to="." method="_on_spawn_area_area_entered"]
