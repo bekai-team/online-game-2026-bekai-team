@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d06v51e55d5ip" path="res://assets/ui/inventorySlot.png" id="1_nfd3l"]
 [ext_resource type="Script" uid="uid://csjuq6aeicifk" path="res://scripts/ui/slot_ui.gd" id="1_vlebx"]
 [ext_resource type="Texture2D" uid="uid://cg2ide2di3s20" path="res://assets/ui/hotbar_selector.png" id="3_wclmh"]
+[ext_resource type="PackedScene" uid="uid://bwj2jthyko1yt" path="res://scenes/slot_item_context_menu.tscn" id="4_sy3s5"]
 
 [sub_resource type="SystemFont" id="SystemFont_vlebx"]
 subpixel_positioning = 0
@@ -48,5 +49,15 @@ visible = false
 position = Vector2(10, 10)
 texture = ExtResource("3_wclmh")
 
+[node name="SlotItemContextMenu" parent="." unique_id=540092172 instance=ExtResource("4_sy3s5")]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 70.0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

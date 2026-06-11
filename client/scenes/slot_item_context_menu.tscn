@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bwj2jthyko1yt"]
+
+[ext_resource type="Script" uid="uid://b6nysaqtl4rmn" path="res://scripts/ui/slot_item_context_menu.gd" id="1_ahnew"]
+[ext_resource type="Texture2D" uid="uid://dgrr6icu758m3" path="res://assets/ui/window.png" id="1_nodm7"]
+
+[node name="SlotItemContextMenu" type="Control" unique_id=540092172]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 80.0
+offset_bottom = 60.0
+script = ExtResource("1_ahnew")
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=2086218737]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 60.0
+texture = ExtResource("1_nodm7")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="UseItemButton" type="Button" parent="." unique_id=380289072]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 8
+text = "Use"
+
+[node name="DropItemButton" type="Button" parent="." unique_id=995888297]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 30.0
+offset_right = 72.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 8
+text = "Drop"
