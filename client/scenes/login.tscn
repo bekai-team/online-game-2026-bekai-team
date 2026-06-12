@@ -61,6 +61,10 @@ alignment = 1
 layout_mode = 2
 text = "Remember me"
 
+[node name="ErrorLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1816331518]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1856886358]
 layout_mode = 2
 text = "Log in"
