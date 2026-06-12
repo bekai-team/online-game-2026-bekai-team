@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://wbh4fai0jd1o"]
+[gd_scene format=3 uid="uid://hioo7ux4ocuv"]
 
 [ext_resource type="Script" uid="uid://cxid4405d702u" path="res://scripts/enemies/rat.gd" id="1_cofvv"]
 [ext_resource type="Texture2D" uid="uid://cb3v8vrwbob3t" path="res://assets/sprites/rat/Rats.png" id="2_plmjq"]
@@ -113,6 +113,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1spx8"]
 size = Vector2(28, 4)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cofvv"]
+radius = 27.0
+
 [node name="RatWhite" type="CharacterBody2D" unique_id=1123250853]
 script = ExtResource("1_cofvv")
 
@@ -134,3 +137,11 @@ offset_top = -15.0
 offset_right = 12.799999
 offset_bottom = -8.0
 show_percentage = false
+
+[node name="AttackBox" type="Area2D" parent="." unique_id=835552552]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=181898585]
+shape = SubResource("CircleShape2D_cofvv")
+
+[connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]
+[connection signal="area_exited" from="AttackBox" to="." method="_on_attack_box_area_exited"]

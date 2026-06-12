@@ -113,13 +113,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1spx8"]
 size = Vector2(28, 4)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qn0ow"]
+radius = 27.0
+
 [node name="Rat" type="CharacterBody2D" unique_id=1123250853]
 script = ExtResource("1_qn0ow")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1406719294]
 sprite_frames = SubResource("SpriteFrames_ujef0")
-animation = &"up"
-frame_progress = 0.37690076
+animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=656868215]
 position = Vector2(-2, 18)
@@ -135,3 +137,11 @@ offset_top = -15.0
 offset_right = 12.799999
 offset_bottom = -8.0
 show_percentage = false
+
+[node name="AttackBox" type="Area2D" parent="." unique_id=877071404]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=1832746]
+shape = SubResource("CircleShape2D_qn0ow")
+
+[connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]
+[connection signal="area_exited" from="AttackBox" to="." method="_on_attack_box_area_exited"]
