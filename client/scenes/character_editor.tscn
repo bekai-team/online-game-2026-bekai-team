@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://du7piqvi2tj7"]
 
-[ext_resource type="Script" path="res://scenes/character_editor.gd" id="1_4itvm"]
 [ext_resource type="PackedScene" uid="uid://cm43dfutshc5u" path="res://scenes/character.tscn" id="1_q0e82"]
 [ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="2_4itvm"]
 [ext_resource type="PackedScene" uid="uid://dk472u8powdlh" path="res://scenes/background.tscn" id="2_tftlr"]
@@ -52,7 +51,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4itvm")
 
 [node name="Background" parent="." unique_id=1971102390 instance=ExtResource("2_tftlr")]
 

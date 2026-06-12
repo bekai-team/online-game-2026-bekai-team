@@ -11,9 +11,9 @@ extends Control
 @onready var right_col = $MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol
 
 var clothes_colors = {
-	"Y2K Frost": Color(0.8, 0.9, 1.0),       
-	"Underworld Crimson": Color(0.4, 0.0, 0.1), 
-	"Void Black": Color(0.1, 0.1, 0.1)       
+	"Y2K Frost": Color(0.8, 0.9, 1.0),
+	"Underworld Crimson": Color(0.4, 0.0, 0.1),
+	"Void Black": Color(0.1, 0.1, 0.1)
 }
 
 var skin_tones = {
@@ -22,7 +22,8 @@ var skin_tones = {
 	"Ashes": Color(0.6, 0.55, 0.55)
 }
 
-var stats = [5, 5, 5, 5, 5, 5, 5] 
+var stats = [5, 5, 5, 5, 5, 5, 5]
+var http_request = HTTPRequest.new()
 
 func _ready():
 	character.set_physics_process(false)
@@ -41,15 +42,17 @@ func _ready():
 			minus_btn.pressed.connect(_change_stat.bind(i, -1, value_label))
 			plus_btn.pressed.connect(_change_stat.bind(i, 1, value_label))
 			
-	# ПІДКЛЮЧАЄМО КНОПКУ СТАРТ
 	start_btn.pressed.connect(_on_start_pressed)
+	
+	add_child(http_request)
+	http_request.request_completed.connect(_on_save_completed)
 
 func _setup_dropdown(btn: OptionButton, items: Array, callable: Callable):
 	btn.clear()
 	for item in items:
 		btn.add_item(item)
 	btn.item_selected.connect(callable)
-	callable.call(0) 
+	callable.call(0)
 
 func _on_clothes_selected(index: int):
 	var color_name = clothes_colors.keys()[index]
@@ -63,8 +66,27 @@ func _change_stat(index: int, amount: int, label: Label):
 	stats[index] = clamp(stats[index] + amount, 1, 10)
 	label.text = str(stats[index])
 
-# ФУНКЦІЯ ПЕРЕХОДУ ТА ЗБЕРЕЖЕННЯ
 func _on_start_pressed():
-	Global.player_clothes_color = clothes_sprite.modulate
-	Global.player_skin_color = body_sprite.modulate
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	start_btn.text = "Saving..."
+	
+	var data = {
+		"stats": stats,
+		"clothes_color": clothes_sprite.modulate.to_html(),
+		"skin_color": body_sprite.modulate.to_html()
+	}
+	var json_data = JSON.stringify(data)
+	var headers = [
+		"Content-Type: application/json",
+		"Authorization: Bearer " + SessionManager.access_token
+	]
+	
+	var create_url = "http://localhost:3000/api/character" 
+	http_request.request(create_url, headers, HTTPClient.METHOD_POST, json_data)
+
+func _on_save_completed(result, response_code, headers, body):
+	if response_code == 200 or response_code == 201:
+		Global.player_clothes_color = clothes_sprite.modulate
+		Global.player_skin_color = body_sprite.modulate
+		get_tree().change_scene_to_file("res://scenes/world.tscn")
+	else:
+		start_btn.text = "Error! " + str(response_code)

@@ -17,6 +17,7 @@ func _ready() -> void:
 	# ЗАСТОСОВУЄМО ЗБЕРЕЖЕНІ КОЛЬОРИ
 	upper.modulate = Global.player_clothes_color
 	body.modulate = Global.player_skin_color
+	start_autosave()
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -74,3 +75,20 @@ func update_animation(input: Vector2) -> void:
 		# When stopping, stay on the walk animation but pause it on the 'idle' frame
 		# Usually frame 0 is the neutral standing pose in these sprite sheets
 		animation_play("idle_" + last_direction)
+		
+func start_autosave():
+	var save_req = HTTPRequest.new()
+	add_child(save_req)
+	
+	while true:
+		await get_tree().create_timer(60.0).timeout
+		if SessionManager.access_token != "":
+			var data = {
+				"position_x": global_position.x, 
+				"position_y": global_position.y
+			}
+			var headers = [
+				"Content-Type: application/json", 
+				"Authorization: Bearer " + SessionManager.access_token
+			]
+			save_req.request("http://localhost:3000/api/inventory", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
