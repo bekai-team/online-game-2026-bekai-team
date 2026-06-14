@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://itdjmru2m2ag"]
+
+[ext_resource type="Script" uid="uid://byfo15g7b0pfc" path="res://scripts/location_trigger_area.gd" id="1_kerxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pkwe"]
+
+[node name="LocationTriggerArea" type="Area2D" unique_id=332173001]
+script = ExtResource("1_kerxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=676834013]
+shape = SubResource("RectangleShape2D_1pkwe")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

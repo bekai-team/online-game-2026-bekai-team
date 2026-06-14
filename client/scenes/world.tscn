@@ -14,7 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://dron6h17hqchp" path="res://scenes/items/key_card.tscn" id="9_w7kh3"]
 [ext_resource type="Resource" uid="uid://dmihcckfw08t8" path="res://resources/inventory/items/key_card.tres" id="11_e3hyu"]
 [ext_resource type="PackedScene" uid="uid://d30mh8mh0iy0p" path="res://scenes/spawner.tscn" id="15_dss4m"]
+[ext_resource type="PackedScene" uid="uid://ouf325mosgyi" path="res://scenes/enemies/rat_brown.tscn" id="15_7t5mc"]
 [ext_resource type="PackedScene" uid="uid://d8avo4p3jjbi" path="res://scenes/enemies/rat.tscn" id="15_xo05s"]
+[ext_resource type="PackedScene" uid="uid://elj2senq048x" path="res://scenes/enemies/rat_black.tscn" id="16_lakw3"]
+[ext_resource type="PackedScene" uid="uid://hioo7ux4ocuv" path="res://scenes/enemies/rat_white.tscn" id="17_pm21f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 resource_name = "Suburbs"
@@ -1981,6 +1984,7 @@ item_res = ExtResource("9_e3hyu")
 [node name="Rat" parent="." unique_id=1123250853 node_paths=PackedStringArray("Goal") instance=ExtResource("15_xo05s")]
 position = Vector2(-161, 385)
 Goal = NodePath("../Character")
+damage = 15
 
 [node name="Spawner" parent="." unique_id=1519128286 node_paths=PackedStringArray("followed_to") instance=ExtResource("15_dss4m")]
 position = Vector2(-232, 267.99997)
@@ -1989,3 +1993,17 @@ spawn_object = ExtResource("15_xo05s")
 followed_to = NodePath("../Character")
 count = 5
 is_destroyable_on_enter = true
+[node name="RatBlack" parent="." unique_id=2003970558 node_paths=PackedStringArray("Goal") instance=ExtResource("16_lakw3")]
+position = Vector2(-517, 877)
+Goal = NodePath("../Character")
+damage = 15
+
+[node name="RatBrown" parent="." unique_id=2038306863 node_paths=PackedStringArray("Goal") instance=ExtResource("15_7t5mc")]
+position = Vector2(893, 906)
+Goal = NodePath("../Character")
+damage = 15
+
+[node name="RatWhite" parent="." unique_id=164947581 node_paths=PackedStringArray("Goal") instance=ExtResource("17_pm21f")]
+position = Vector2(1238, 198)
+Goal = NodePath("../Character")
+damage = 15

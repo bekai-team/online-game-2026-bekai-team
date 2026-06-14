@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://ouf325mosgyi"]
+
+[ext_resource type="Script" uid="uid://cxid4405d702u" path="res://scripts/enemies/rat.gd" id="1_sh1uf"]
+[ext_resource type="Texture2D" uid="uid://cb3v8vrwbob3t" path="res://assets/sprites/rat/Rats.png" id="2_l8f6b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh1uf"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8f6b"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy6ec"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mmux"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12ywo"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj1ia"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gm6w"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2wby"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(192, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n77lb"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(240, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x57i4"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q45h1"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(192, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkwb0"]
+atlas = ExtResource("2_l8f6b")
+region = Rect2(240, 144, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujef0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh1uf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8f6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vy6ec")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mmux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12ywo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj1ia")
+}],
+"loop": true,
+"name": &"left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gm6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2wby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n77lb")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x57i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q45h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkwb0")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1spx8"]
+size = Vector2(28, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7rb4r"]
+radius = 27.0
+
+[node name="RatBrown" type="CharacterBody2D" unique_id=1123250853]
+script = ExtResource("1_sh1uf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1406719294]
+sprite_frames = SubResource("SpriteFrames_ujef0")
+animation = &"up"
+frame = 1
+frame_progress = 0.41078407
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=656868215]
+position = Vector2(-2, 18)
+shape = SubResource("RectangleShape2D_1spx8")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=236952238]
+path_desired_distance = 4.0
+path_max_distance = 10.0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=572135645]
+offset_left = -13.0
+offset_top = -15.0
+offset_right = 12.799999
+offset_bottom = -8.0
+show_percentage = false
+
+[node name="AttackBox" type="Area2D" parent="." unique_id=180228354]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox" unique_id=1534528194]
+shape = SubResource("CircleShape2D_7rb4r")
+
+[connection signal="area_entered" from="AttackBox" to="." method="_on_attack_box_area_entered"]
+[connection signal="area_exited" from="AttackBox" to="." method="_on_attack_box_area_exited"]
