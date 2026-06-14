@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="3_wu84c"]
 [ext_resource type="Script" uid="uid://dm62hu472f0qk" path="res://scripts/login_menu_btn.gd" id="5_8ln24"]
 [ext_resource type="Script" uid="uid://bm6yorc8vb52b" path="res://scripts/register_menu_btn.gd" id="5_rtw2f"]
+[ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="6_rtw2f"]
 
 [node name="Main Menu" type="Control" unique_id=936435750]
 layout_mode = 3
@@ -41,5 +42,34 @@ theme = ExtResource("3_wu84c")
 text = "Register"
 script = ExtResource("5_rtw2f")
 
+[node name="PlayButton" type="Button" parent="." unique_id=297049652]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 214.0
+offset_right = 604.0
+offset_bottom = 242.0
+theme = ExtResource("3_wu84c")
+text = "Play"
+script = ExtResource("5_rtw2f")
+
+[node name="StatusLabel" type="Label" parent="." unique_id=814463535]
+z_index = 5
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("6_rtw2f")
+
+[node name="InfoLabel" type="Label" parent="." unique_id=270333570]
+z_index = 5
+layout_mode = 0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 60.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("6_rtw2f")
+
 [connection signal="pressed" from="Login" to="Login" method="_on_pressed"]
 [connection signal="pressed" from="Register" to="Register" method="_on_pressed"]
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]

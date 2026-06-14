@@ -1,38 +1,45 @@
 extends Control
 
+@onready var status_label = $StatusLabel
+@onready var info_label = $InfoLabel
+@onready var play_button = $PlayButton
+
 var ping_req = HTTPRequest.new()
 var profile_req = HTTPRequest.new()
 
+var port = "3001" 
+
 func _ready():
-	var status_label = Label.new()
-	status_label.position = Vector2(15, 15)
-	status_label.text = "Server: Checking..."
-	add_child(status_label)
-	
-	var info_label = Label.new()
-	info_label.position = Vector2(15, 45) 
-	add_child(info_label)
-	
 	add_child(ping_req)
 	add_child(profile_req)
 	
-	ping_req.request_completed.connect(func(res, code, hdr, body):
-		if code == 200:
-			status_label.text = "Server: ONLINE"
-			status_label.add_theme_color_override("font_color", Color.GREEN)
-		else:
-			status_label.text = "Server: OFFLINE"
-			status_label.add_theme_color_override("font_color", Color.RED)
-	)
-	ping_req.request("http://localhost:3000/api/health") 
+	play_button.pressed.connect(_on_play_pressed)
+	
+	status_label.text = "Server: Checking..."
+	ping_req.request_completed.connect(_on_ping_completed)
+	ping_req.request("http://localhost:" + port + "/api/health")
 	
 	if SessionManager.access_token != "":
 		info_label.text = "Loading profile..."
-		profile_req.request_completed.connect(func(res, code, hdr, body):
-			if code == 200:
-				info_label.text = "Character found. Ready to play!"
-			else:
-				info_label.text = "No character found. Need to create one."
-		)
+		profile_req.request_completed.connect(_on_profile_completed)
 		var headers = ["Authorization: Bearer " + SessionManager.access_token]
-		profile_req.request("http://localhost:3000/api/profile", headers)
+		profile_req.request("http://localhost:" + port + "/api/profile", headers)
+	else:
+		info_label.text = "Status: Guest Session"
+
+func _on_ping_completed(result, response_code, headers, body):
+	if response_code == 200:
+		status_label.text = "Server: ONLINE"
+		status_label.add_theme_color_override("font_color", Color.GREEN)
+	else:
+		status_label.text = "Server: OFFLINE (Code: " + str(response_code) + ")"
+		status_label.add_theme_color_override("font_color", Color.RED)
+
+func _on_profile_completed(result, response_code, headers, body):
+	if response_code == 200:
+		info_label.text = "Character loaded. Ready to play!"
+	else:
+		info_label.text = "No character found. Please create one."
+
+func _on_play_pressed():
+	get_tree().change_scene_to_file("res://scenes/character_editor.tscn")

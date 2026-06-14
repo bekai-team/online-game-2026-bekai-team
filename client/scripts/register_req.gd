@@ -6,7 +6,8 @@ extends Button
 @onready var error_label = $"../ErrorLabel"
 @onready var http_request = $HTTPRequest
 
-var register_url = "http://localhost:3000/api/auth/signup"
+var port = "3001" 
+@onready var register_url = "http://localhost:" + port + "/api/auth/sign-up" # Виправлено на sign-up
 
 func _ready():
 	http_request.request_completed.connect(_on_request_completed)
@@ -38,7 +39,7 @@ func _on_request_completed(result, response_code, headers, body):
 		error_label.add_theme_color_override("font_color", Color.GREEN)
 		error_label.text = "Успіх! Поверніться і увійдіть."
 	else:
-		show_error("Помилка (Код: " + str(response_code) + ")")
+		show_error("Помилка реєстрації (Код: " + str(response_code) + ")")
 
 func show_error(msg: String):
 	error_label.add_theme_color_override("font_color", Color.RED)
