@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://reo82ehn6uf5"]
 
 [ext_resource type="PackedScene" uid="uid://dk472u8powdlh" path="res://scenes/background.tscn" id="1_8ln24"]
+[ext_resource type="Script" uid="uid://d2wsy4sru5xxf" path="res://scripts/main_menu.gd" id="1_oa1go"]
 [ext_resource type="Texture2D" uid="uid://bifjcwrrlltk3" path="res://assets/ui/logo.png" id="2_wu84c"]
 [ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="3_wu84c"]
 [ext_resource type="Script" uid="uid://dm62hu472f0qk" path="res://scripts/login_menu_btn.gd" id="5_8ln24"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oa1go")
 
 [node name="Background" parent="." unique_id=1971102390 instance=ExtResource("1_8ln24")]
 
@@ -50,24 +52,23 @@ offset_right = 604.0
 offset_bottom = 242.0
 theme = ExtResource("3_wu84c")
 text = "Play"
-script = ExtResource("5_rtw2f")
 
 [node name="StatusLabel" type="Label" parent="." unique_id=814463535]
 z_index = 5
 layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 60.0
-offset_bottom = 43.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 28.0
 theme_override_fonts/font = ExtResource("6_rtw2f")
 
 [node name="InfoLabel" type="Label" parent="." unique_id=270333570]
 z_index = 5
 layout_mode = 0
-offset_left = 20.0
-offset_top = 60.0
-offset_right = 60.0
-offset_bottom = 83.0
+offset_left = 5.0
+offset_top = 25.0
+offset_right = 45.0
+offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("6_rtw2f")
 
 [connection signal="pressed" from="Login" to="Login" method="_on_pressed"]
