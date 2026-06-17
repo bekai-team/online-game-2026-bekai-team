@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ouf325mosgyi"]
 
-[ext_resource type="Script" uid="uid://cxid4405d702u" path="res://scripts/enemies/rat.gd" id="1_sh1uf"]
-[ext_resource type="Texture2D" uid="uid://cb3v8vrwbob3t" path="res://assets/sprites/rat/Rats.png" id="2_l8f6b"]
+[ext_resource type="Script" uid="uid://dkojor6fv2xo6" path="res://scripts/enemies/rat.gd" id="1_sh1uf"]
+[ext_resource type="Texture2D" uid="uid://uferonv16ovb" path="res://assets/sprites/rat/Rats.png" id="2_l8f6b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sh1uf"]
 atlas = ExtResource("2_l8f6b")
@@ -117,6 +117,7 @@ size = Vector2(28, 4)
 radius = 27.0
 
 [node name="RatBrown" type="CharacterBody2D" unique_id=1123250853]
+z_index = 1
 script = ExtResource("1_sh1uf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1406719294]
