@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bue8livua8euk"]
+
+[ext_resource type="Script" uid="uid://ds45bkw24bb70" path="res://scripts/quest_panel.gd" id="1_hu55q"]
+[ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="2_0iose"]
+
+[node name="QuestPanel" type="CanvasLayer" unique_id=1466482098]
+script = ExtResource("1_hu55q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1935878296]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -18.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" unique_id=629934083]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestList" type="ItemList" parent="ColorRect/HBoxContainer" unique_id=1253000679]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightCol" type="VBoxContainer" parent="ColorRect/HBoxContainer" unique_id=1372760744]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestTitle" type="Label" parent="ColorRect/HBoxContainer/RightCol" unique_id=1236732714]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0iose")
+theme_override_font_sizes/font_size = 20
+
+[node name="QuestDesc" type="RichTextLabel" parent="ColorRect/HBoxContainer/RightCol" unique_id=850725469]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CloseBtn" type="Button" parent="ColorRect/HBoxContainer/RightCol" unique_id=1398045695]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0iose")
+text = "Закрити"
