@@ -108,7 +108,7 @@ is_destroyable_on_enter = true
 
 [node name="Spawner" parent="SpawnersGroup/BlackRatSpawners" unique_id=934688582 node_paths=PackedStringArray("followed_to") instance=ExtResource("7_w7m57")]
 position = Vector2(-960, -39)
-scale = Vector2(0.755, 0.755)
+scale = Vector2(0.75, 0.75)
 spawn_object = ExtResource("9_0ncie")
 followed_to = NodePath("../../../Character")
 count = 4
