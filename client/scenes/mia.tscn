@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c8wnhh0aafj18"]
+
+[ext_resource type="Texture2D" uid="uid://djp0xt6c3on5l" path="res://assets/sprites/npc/mia.png" id="1_ir3k4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8difc"]
+atlas = ExtResource("1_ir3k4")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibxir"]
+atlas = ExtResource("1_ir3k4")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qk3a"]
+atlas = ExtResource("1_ir3k4")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tisen"]
+atlas = ExtResource("1_ir3k4")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0xng"]
+atlas = ExtResource("1_ir3k4")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kwule"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8difc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibxir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qk3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tisen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0xng")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Mia" type="AnimatedSprite2D" unique_id=526788498]
+sprite_frames = SubResource("SpriteFrames_kwule")
+frame = 4
+frame_progress = 0.5962593

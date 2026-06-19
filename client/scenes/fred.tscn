@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c5u68jsx421on"]
+
+[ext_resource type="Texture2D" uid="uid://bauol63llxo3q" path="res://assets/sprites/npc/fred.png" id="1_o4h7k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rdab"]
+atlas = ExtResource("1_o4h7k")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqhmi"]
+atlas = ExtResource("1_o4h7k")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yucr"]
+atlas = ExtResource("1_o4h7k")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46mln"]
+atlas = ExtResource("1_o4h7k")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svagy"]
+atlas = ExtResource("1_o4h7k")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3heuj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rdab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqhmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yucr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46mln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svagy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Fred" type="AnimatedSprite2D" unique_id=332715191]
+sprite_frames = SubResource("SpriteFrames_3heuj")
+frame = 3
+frame_progress = 0.50043786

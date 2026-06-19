@@ -1,17 +1,21 @@
 extends CharacterBody2D
 
+class_name Character
+signal health_changed
+
+const MAX_HEALTH: int = 100
 const SPEED = 100.0
+var health: int = MAX_HEALTH
 var damage = 20
 var last_direction: String = "down"
-
-var max_health = 100
-var current_health = max_health
-var is_dead = false
+var is_dead: bool = false
 
 @onready var body: AnimatedSprite2D = $Skeleton/Body/Sprite
 @onready var upper: AnimatedSprite2D = $Skeleton/Upper/Sprite
 @onready var bottom: AnimatedSprite2D = $Skeleton/Bottom/Sprite
 @onready var hitbox = $MeleeHitbox
+
+@export var inventory: Inventory
 
 func _ready() -> void:
 	body.frame = 0
@@ -53,6 +57,18 @@ func animation_fliph(cond: bool):
 	body.flip_h = cond
 	upper.flip_h = cond
 	bottom.flip_h = cond
+	
+func take_damage(amount: int) -> void:
+	if is_dead: return 
+	
+	if health <= 0:
+		print('Stop fucking my ass!')
+		
+	health -= amount
+	health_changed.emit()
+	
+	if health <= 0:
+		die()
 
 func perform_attack():
 	animation_stop()
@@ -98,16 +114,6 @@ func start_autosave():
 				"Authorization: Bearer " + SessionManager.access_token
 			]
 			save_req.request("http://localhost:3000/api/inventory", headers, HTTPClient.METHOD_POST, JSON.stringify(data))
-
-
-func take_damage(amount: int):
-	if is_dead: return 
-	
-	current_health -= amount
-	print("Гравець отримав шкоду. Здоров'я: ", current_health)
-	
-	if current_health <= 0:
-		die()
 
 func die():
 	is_dead = true

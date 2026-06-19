@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bkju8m4jr3l63"]
+
+[ext_resource type="Script" uid="uid://dgsnm1taewqwh" path="res://scripts/items/shotgun_item.gd" id="1_f08q6"]
+[ext_resource type="Texture2D" uid="uid://b2a13upm1fu1t" path="res://assets/weaponary/shotguns.png" id="1_gpx0i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpx0i"]
+size = Vector2(919.9999, 199.99997)
+
+[node name="ShotgunItem" type="Node2D" unique_id=828721423]
+scale = Vector2(0.38, 0.38)
+script = ExtResource("1_f08q6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=375294641]
+position = Vector2(0, 2.3841858e-07)
+scale = Vector2(1.9000051, 1.9000052)
+texture = ExtResource("1_gpx0i")
+offset = Vector2(10.265, -0.24)
+flip_h = true
+region_enabled = true
+region_rect = Rect2(1, 1, 48, 10)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=418793153]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2092701783]
+position = Vector2(19.000004, -1.1920929e-07)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_gpx0i")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
