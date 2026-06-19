@@ -36,8 +36,6 @@ func shoot(bullet_instance: Node):
 	
 	$ShootSound.pitch_scale = randf_range(0.9, 1.1)
 	$ShootSound.play()
-	
-	rotate(0.1745)
 
 
 func _on_timer_timeout() -> void:
