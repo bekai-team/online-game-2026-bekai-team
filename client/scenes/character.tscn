@@ -2037,7 +2037,7 @@ frame_progress = 0.3609309
 position = Vector2(6, -12)
 sprite_frames = SubResource("SpriteFrames_xtx0q")
 animation = &"walk_up"
-frame_progress = 0.8432931
+frame_progress = 0.80444604
 
 [node name="Upper" type="Node2D" parent="Skeleton" unique_id=2062887275]
 z_index = 1
