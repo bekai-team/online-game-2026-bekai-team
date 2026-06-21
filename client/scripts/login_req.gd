@@ -30,8 +30,9 @@ func _on_request_completed(result, response_code, headers, body):
 		
 		# Зберігаємо токен у твій SessionManager
 		var response_data = JSON.parse_string(body.get_string_from_utf8())
-		if response_data and response_data.has("token"):
-			SessionManager.save_token(response_data["token"])
+		print(response_data)
+		if response_data and response_data.has("accessToken"):
+			SessionManager.save_token(response_data["accessToken"])
 			
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	else:

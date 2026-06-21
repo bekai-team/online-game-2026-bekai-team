@@ -67,8 +67,8 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	health_changed.emit()
 	
-	if health <= 0:
-		die()
+	#if health <= 0:
+		#die()
 
 func perform_attack():
 	animation_stop()
