@@ -3,6 +3,7 @@ extends Control
 @onready var status_label = $StatusLabel
 @onready var info_label = $InfoLabel
 @onready var play_button = $PlayButton
+@onready var logout_button = $LogoutButton
 
 var ping_req = HTTPRequest.new()
 var profile_req = HTTPRequest.new()
@@ -24,6 +25,7 @@ func _ready():
 		profile_req.request_completed.connect(_on_profile_completed)
 		var headers = ["Authorization: Bearer " + SessionManager.access_token]
 		profile_req.request("http://localhost:" + port + "/api/profile", headers)
+		logout_button.visible = true
 	else:
 		info_label.text = "Status: Guest Session"
 
@@ -44,3 +46,7 @@ func _on_profile_completed(result, response_code, headers, body):
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://scenes/character_editor.tscn")
+
+
+func _on_logout_button_pressed() -> void:
+	pass # Replace with function body.

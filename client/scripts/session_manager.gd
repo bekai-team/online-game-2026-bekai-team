@@ -16,6 +16,17 @@ func save_data(token: String, email: String):
 		file.close()
 		print("Токен успішно збережено в LocalStorage!")
 
+func get_data():
+	if FileAccess.file_exists(SAVE_PATH):
+		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		var content = file.get_as_text()
+		file.close()
+		
+		var data = JSON.parse_string(content)
+		return data
+	else:
+		return null
+
 func load_token():
 	if FileAccess.file_exists(SAVE_PATH):
 		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
@@ -33,8 +44,9 @@ func load_token():
 			return true
 	return false
 
-func clear_token():
+func clear_data():
 	access_token = ""
+	email = ''
 	var dir = DirAccess.open("user://")
 	if dir and dir.file_exists("session.json"):
 		dir.remove("session.json")
