@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dk472u8powdlh" path="res://scenes/background.tscn" id="1_pymad"]
 [ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="2_nw41r"]
-[ext_resource type="Script" uid="uid://dloayxkrxa75g" path="res://scripts/login_req.gd" id="3_0emk2"]
+[ext_resource type="Script" uid="uid://m57jbdsx1np5" path="res://scripts/login_req.gd" id="3_0emk2"]
 [ext_resource type="PackedScene" uid="uid://dmbjrfiiibfjd" path="res://scenes/menu_btn.tscn" id="4_cs5o2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0emk2"]
@@ -60,6 +60,10 @@ alignment = 1
 [node name="CheckBox" type="CheckBox" parent="PanelContainer/VBoxContainer" unique_id=1452932155]
 layout_mode = 2
 text = "Remember me"
+
+[node name="ErrorLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1816331518]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1856886358]
 layout_mode = 2

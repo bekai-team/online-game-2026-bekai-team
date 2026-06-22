@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://inrpmgadjkpg"]
+
+[ext_resource type="Script" uid="uid://d16ai1353ciij" path="res://dialogue.gd" id="1_dk3e1"]
+[ext_resource type="Texture2D" uid="uid://dxh2076tnqqgl" path="res://assets/sprites/дід.png" id="2_omdth"]
+[ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="2_yn4um"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omdth"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.88, 0.22879998, 0.41330665, 0.78431374)
+border_color = Color(0.3254902, 0.92156863, 0.89411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2jlf"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.043137256, 0, 0.105882354, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3254902, 0.92156863, 0.89411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4jro"]
+bg_color = Color(0.043137256, 0, 0.105882354, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.3254902, 0.92156863, 0.89411765, 1)
+shadow_color = Color(0.3254902, 0.92156863, 0.89411765, 1)
+shadow_size = 4
+
+[node name="DialoguePanel" type="Control" unique_id=2080364744]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dk3e1")
+
+[node name="BackgroundOverlay" type="ColorRect" parent="." unique_id=1523582934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="ModalWindow" type="PanelContainer" parent="." unique_id=331748414]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_omdth")
+
+[node name="MainVBox" type="VBoxContainer" parent="ModalWindow" unique_id=1563010907]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TopHBox" type="HBoxContainer" parent="ModalWindow/MainVBox" unique_id=1922183124]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="AvatarFrame" type="PanelContainer" parent="ModalWindow/MainVBox/TopHBox" unique_id=941874061]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2jlf")
+
+[node name="Avatar" type="TextureRect" parent="ModalWindow/MainVBox/TopHBox/AvatarFrame" unique_id=1309051921]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_omdth")
+expand_mode = 1
+
+[node name="DialogueScroll" type="ScrollContainer" parent="ModalWindow/MainVBox/TopHBox" unique_id=271984726]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2jlf")
+
+[node name="OutputLabel" type="RichTextLabel" parent="ModalWindow/MainVBox/TopHBox/DialogueScroll" unique_id=493266638]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_yn4um")
+theme_override_fonts/bold_font = ExtResource("2_yn4um")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+
+[node name="ButtonHBox" type="HBoxContainer" parent="ModalWindow/MainVBox" unique_id=1771336793]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="KillButton" type="Button" parent="ModalWindow/MainVBox/ButtonHBox" unique_id=1329673236]
+custom_minimum_size = Vector2(60, 10)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yn4um")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_r2jlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m4jro")
+text = "Kill"
+
+[node name="RecruitButton" type="Button" parent="ModalWindow/MainVBox/ButtonHBox" unique_id=1709660490]
+custom_minimum_size = Vector2(60, 10)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yn4um")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_r2jlf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m4jro")
+text = "Recruit"
+
+[node name="DialogueInput" type="TextEdit" parent="ModalWindow/MainVBox" unique_id=255551655]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_yn4um")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_r2jlf")

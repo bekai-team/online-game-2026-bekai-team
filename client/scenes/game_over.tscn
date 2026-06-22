@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://gyv3xogav2x2"]
+
+[ext_resource type="Script" uid="uid://bgaet86kkueyu" path="res://scripts/game_over.gd" id="1_wqhvx"]
+[ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="2_tbwuq"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=2003392234]
+script = ExtResource("1_wqhvx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=757288720]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="GameOverLabel" type="Label" parent="ColorRect" unique_id=1972792463]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -18.5
+offset_right = 67.5
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_tbwuq")
+theme_override_font_sizes/font_size = 36
+text = "GAME OVER"
+
+[node name="CountdownLabel" type="Label" parent="ColorRect" unique_id=1709229193]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 8.5
+offset_right = 20.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tbwuq")
