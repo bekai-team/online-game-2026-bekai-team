@@ -46,7 +46,3 @@ func _on_profile_completed(result, response_code, headers, body):
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://scenes/character_editor.tscn")
-
-
-func _on_logout_button_pressed() -> void:
-	pass # Replace with function body.
