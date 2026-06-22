@@ -271,7 +271,6 @@ blend_mode = 2
 [node name="LocationTriggerArea" parent="." unique_id=332173001 instance=ExtResource("4_7wvbm")]
 position = Vector2(329, 26.000002)
 scale = Vector2(2.315, 2.315)
-target_area_name = null
 target_level_to_load = ExtResource("5_bfqb0")
 
 [node name="Mia" parent="." unique_id=526788498 instance=ExtResource("6_hlsmc")]
