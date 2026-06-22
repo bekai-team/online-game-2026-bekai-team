@@ -6,7 +6,7 @@
 
 [node name="Shotgun" type="Node2D" unique_id=1204966530]
 z_index = 1
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.28, 0.28)
 script = ExtResource("1_bkjqd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1956500729]
@@ -23,3 +23,7 @@ position = Vector2(64.605, -4.44)
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=547461369]
 stream = ExtResource("3_bkjqd")
+
+[node name="Timer" type="Timer" parent="." unique_id=844410762]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

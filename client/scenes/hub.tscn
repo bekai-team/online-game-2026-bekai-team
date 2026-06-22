@@ -1,10 +1,11 @@
 [gd_scene format=4 uid="uid://bw4upi6fvqs7n"]
 
-[ext_resource type="Texture2D" uid="uid://t1dbt1bx4cik" path="res://assets/tilesets/hub.png" id="1_d1od2"]
+[ext_resource type="Texture2D" uid="uid://bm7cp7wahichc" path="res://assets/tilesets/hub.png" id="1_d1od2"]
 [ext_resource type="Texture2D" uid="uid://dflqssf48cyqh" path="res://assets/tilesets/suburbs.png" id="1_w6xti"]
 [ext_resource type="PackedScene" uid="uid://cm43dfutshc5u" path="res://scenes/character.tscn" id="2_w6xti"]
 [ext_resource type="PackedScene" uid="uid://itdjmru2m2ag" path="res://scenes/location_trigger_area.tscn" id="4_7wvbm"]
-[ext_resource type="PackedScene" path="res://scenes/suburbs.tscn" id="5_bfqb0"]
+[ext_resource type="PackedScene" uid="uid://dpoym83b5gsvs" path="res://scenes/suburbs.tscn" id="5_bfqb0"]
+[ext_resource type="PackedScene" uid="uid://c8wnhh0aafj18" path="res://scenes/mia.tscn" id="6_hlsmc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wvbm"]
 texture = ExtResource("1_w6xti")
@@ -39,9 +40,13 @@ texture = ExtResource("1_w6xti")
 10:2/0 = 0
 11:2/0 = 0
 12:2/0 = 0
+12:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:2/0 = 0
+13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:2/0 = 0
+14:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:2/0 = 0
+15:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:3/0 = 0
 7:3/0 = 0
 8:3/0 = 0
@@ -49,9 +54,13 @@ texture = ExtResource("1_w6xti")
 10:3/0 = 0
 11:3/0 = 0
 12:3/0 = 0
+12:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:3/0 = 0
+14:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:3/0 = 0
+15:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:4/0 = 0
 7:4/0 = 0
 8:4/0 = 0
@@ -59,9 +68,13 @@ texture = ExtResource("1_w6xti")
 10:4/0 = 0
 11:4/0 = 0
 12:4/0 = 0
+12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:4/0 = 0
+13:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:4/0 = 0
+14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:4/0 = 0
+15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:5/0 = 0
 7:5/0 = 0
 8:5/0 = 0
@@ -69,9 +82,13 @@ texture = ExtResource("1_w6xti")
 10:5/0 = 0
 11:5/0 = 0
 12:5/0 = 0
+12:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:5/0 = 0
+13:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:5/0 = 0
+14:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:5/0 = 0
+15:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -238,6 +255,14 @@ texture = ExtResource("1_d1od2")
 position = Vector2(378, 190.00002)
 scale = Vector2(1.345, 1.345)
 
+[node name="Camera2D" type="Camera2D" parent="Character" unique_id=193526274]
+zoom = Vector2(3, 3)
+limit_left = 4
+limit_top = 2
+limit_right = 640
+limit_bottom = 360
+position_smoothing_enabled = true
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=767235231]
 color = Color(0.09430925, 0.10314881, 0.18438321, 1)
 energy = 0.4
@@ -248,3 +273,6 @@ position = Vector2(329, 26.000002)
 scale = Vector2(2.315, 2.315)
 target_area_name = null
 target_level_to_load = ExtResource("5_bfqb0")
+
+[node name="Mia" parent="." unique_id=526788498 instance=ExtResource("6_hlsmc")]
+position = Vector2(463, 184)

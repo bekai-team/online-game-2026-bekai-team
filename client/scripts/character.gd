@@ -5,7 +5,7 @@ signal health_changed
 
 const MAX_HEALTH: int = 100
 var health: int = MAX_HEALTH
-const SPEED = 100.0
+const SPEED = 70.0
 var damage = 20
 var last_direction: String = "down"
 

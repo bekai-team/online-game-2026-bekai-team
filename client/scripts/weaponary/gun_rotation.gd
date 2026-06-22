@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var muzzle: Marker2D = $Marker2D
+@onready var timer: Timer = $Timer
+@onready var shots_available: bool = true
 const BULLET = preload("res://scenes/bullets/bullet.tscn")
 var past_scale: float
 var screen_pos: Vector2
@@ -20,12 +22,21 @@ func _physics_process(delta: float) -> void:
 	else:
 		scale.y = past_scale
 	
-	if Input.is_action_just_pressed("attack"):
-		bullet_instance = BULLET.instantiate()
-		get_tree().root.add_child(bullet_instance)
-		
-		bullet_instance.global_position = muzzle.global_position
-		bullet_instance.rotation = rotation
-		
-		$ShootSound.pitch_scale = randf_range(0.9, 1.1)
-		$ShootSound.play()
+	if Input.is_action_just_pressed("attack") and shots_available:
+		shoot(bullet_instance)
+
+func shoot(bullet_instance: Node):
+	shots_available = false
+	timer.start(1.2)
+	bullet_instance = BULLET.instantiate()
+	get_tree().root.add_child(bullet_instance)
+	
+	bullet_instance.global_position = muzzle.global_position
+	bullet_instance.rotation = rotation
+	
+	$ShootSound.pitch_scale = randf_range(0.9, 1.1)
+	$ShootSound.play()
+
+
+func _on_timer_timeout() -> void:
+	shots_available = true
