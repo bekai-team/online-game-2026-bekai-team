@@ -1,59 +1,60 @@
-extends CanvasLayer
+extends CanvasLayer 
 
 @onready var quest_list = %QuestList
 @onready var quest_title = %QuestTitle
 @onready var quest_desc = %QuestDesc
 @onready var close_btn = %CloseBtn
 
-# Тимчасова локальна база квестів для тестування UI
-var quests = [
-	{
-		"title": "Перші кроки",
-		"desc": "Світ Maditron не пробачає помилок.\n\nЗавдання: Знайди вихід із початкового сектора.\n\nНагорода: 100 XP",
-		"status": "активний"
-	},
-	{
-		"title": "Зниклий код",
-		"desc": "Артем загубив флешку з ключами доступу до бази даних. Можливо, вона десь біля старих серверів.\n\nЗавдання: Знайти флешку.\n\nНагорода: Унікальний скін",
-		"status": "активний"
-	}
-]
-
 func _ready():
-	hide() # Вікно має бути закритим при старті гри
+	hide() 
 	
-	# Підключаємо сигнали через код (щоб не клацати в редакторі)
 	close_btn.pressed.connect(_on_close_pressed)
 	quest_list.item_selected.connect(_on_quest_selected)
-	
-	# Очищуємо тексти за замовчуванням
-	quest_title.text = "Оберіть завдання"
-	quest_desc.text = ""
 	
 	_update_quest_list()
 
 func _update_quest_list():
-	quest_list.clear()
-	for quest in quests:
-		var display_text = ""
-		if quest["status"] == "активний":
-			display_text = "[ ! ] " + quest["title"]
-		else:
-			display_text = "[ v ] " + quest["title"]
+	quest_list.clear() 
+	
+	match Global.quest_state:
+		0:
+			quest_list.add_item("Немає активних завдань")
+		1:
+			quest_list.add_item("[ ! ] Зачистка щурів")
+		2:
+			quest_list.add_item("[ ? ] Зачистка щурів (Готово)")
+		3:
+			quest_list.add_item("[ v ] Зачистка щурів (Здано)")
 			
-		quest_list.add_item(display_text)
+	quest_list.select(0)
+	_on_quest_selected(0)
 
-func _on_quest_selected(index: int):
-	var selected_quest = quests[index]
-	quest_title.text = selected_quest["title"]
-	quest_desc.text = selected_quest["desc"]
+func _on_quest_selected(_index: int):
+	match Global.quest_state:
+		0:
+			quest_title.text = "Вільно"
+			quest_desc.text = "Поговоріть з мешканцями Хабу, щоб знайти роботу."
+		1:
+			quest_title.text = "Зачистка щурів"
+			quest_desc.text = "Хлопчик попросив зачистити підвал від щурів.\n\nПрогрес: Вбито щурів " + str(Global.rats_killed) + " / " + str(Global.rats_required)
+		2:
+			quest_title.text = "Зачистка щурів"
+			quest_desc.text = "Ви успішно знищили всіх щурів!\n\nПовертайтеся до хлопчика в Хаб за нагородою."
+		3:
+			quest_title.text = "Зачистка щурів"
+			quest_desc.text = "Квест успішно завершено. Ви допомогли Хабу і отримали нагороду!"
 
 func _on_close_pressed():
 	hide()
 
-# Відкриття/закриття вікна на кнопку (клавіша 'Q')
 func _input(event):
-	if event.is_action_pressed("toggle_quests"): # Налаштуємо цю кнопку нижче
+	if event.is_action_pressed("toggle_quests"):
+
+		var dialogue = get_tree().current_scene.find_child("DialoguePanel", true, false)
+		
+		if dialogue and dialogue.visible:
+			return 
+		
 		visible = !visible
 		if visible:
 			_update_quest_list()

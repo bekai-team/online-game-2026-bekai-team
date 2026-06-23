@@ -30,10 +30,6 @@ func _ready() -> void:
 func _physics_process(_delta):
 	if is_dead: return 
 	
-	#2. КНОПКА "К" ДЛЯ ТЕСТУВАННЯ СМЕРТІ
-	if Input.is_key_pressed(KEY_K):
-		take_damage(25)
-	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	update_animation(direction)
 	if Input.is_action_just_pressed("attack"):
@@ -61,26 +57,26 @@ func animation_fliph(cond: bool):
 func take_damage(amount: int) -> void:
 	if is_dead: return 
 	
-	if health <= 0:
-		print('Stop fucking my ass!')
-		
 	health -= amount
 	health_changed.emit()
 	
-	#if health <= 0:
-		#die()
+	if health <= 0:
+		print("Гравець помер!")
+		die()
 
 func perform_attack():
 	animation_stop()
 	animation_play("punch_" + last_direction)
+	if get_tree().current_scene.name == "Hub":
+		return
 	if body.is_playing():
 		body.connect("animation_finished", _on_attack_animation_finished)
 	
-	var overlapping_objects = hitbox.get_overlapping_bodies()
-	
-	for object in overlapping_objects:
-		if object.has_method("take_damage"):
-			object.take_damage(damage)
+	#var overlapping_objects = hitbox.get_overlapping_bodies()
+	#
+	#for object in overlapping_objects:
+		#if object.has_method("take_damage"):
+			#object.take_damage(damage)
 
 func _on_attack_animation_finished():
 	set_physics_process(true)
@@ -119,6 +115,7 @@ func die():
 	is_dead = true
 	velocity = Vector2.ZERO 
 	animation_play("idle_down") 
+	get_tree().paused = true
 	
 	var game_over_scene = load("res://scenes/game_over.tscn")
 	if game_over_scene:
