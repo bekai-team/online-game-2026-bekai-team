@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://snvi6ymchnps" path="res://assets/tilesets/hub_tree.png" id="3_s6eg2"]
 [ext_resource type="PackedScene" uid="uid://itdjmru2m2ag" path="res://scenes/location_trigger_area.tscn" id="4_7wvbm"]
 [ext_resource type="PackedScene" uid="uid://c8wnhh0aafj18" path="res://scenes/mia.tscn" id="6_hlsmc"]
-[ext_resource type="Script" uid="uid://ckfhjo1kc4tm2" path="res://scenes/collision_shape_2d.gd" id="7_3wyi3"]
+[ext_resource type="Script" uid="uid://buq2x1455t77y" path="res://scenes/collision_shape_2d.gd" id="7_3wyi3"]
 [ext_resource type="PackedScene" uid="uid://bue8livua8euk" path="res://scenes/quest_panel.tscn" id="8_4oyfp"]
 [ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="8_lcd1r"]
 [ext_resource type="Texture2D" uid="uid://ca6bdhpgut14q" path="res://assets/sprites/npc/mia_portrait.png" id="9_lcd1r"]
 [ext_resource type="PackedScene" uid="uid://b6bxup0a1bxh0" path="res://scenes/dialogue_panel.tscn" id="10_s6eg2"]
-[ext_resource type="Script" uid="uid://bfm53tjvq5gga" path="res://scenes/quest_notification.gd" id="11_s6eg2"]
+[ext_resource type="Script" uid="uid://b65k2b75bjsij" path="res://scenes/quest_notification.gd" id="11_s6eg2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wvbm"]
 texture = ExtResource("1_w6xti")
