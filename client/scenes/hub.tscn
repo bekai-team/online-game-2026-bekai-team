@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://bm7cp7wahichc" path="res://assets/tilesets/hub.png" id="1_d1od2"]
 [ext_resource type="Texture2D" uid="uid://dflqssf48cyqh" path="res://assets/tilesets/suburbs.png" id="1_w6xti"]
 [ext_resource type="PackedScene" uid="uid://cm43dfutshc5u" path="res://scenes/character.tscn" id="2_w6xti"]
+[ext_resource type="Texture2D" uid="uid://snvi6ymchnps" path="res://assets/tilesets/hub_tree.png" id="3_s6eg2"]
 [ext_resource type="PackedScene" uid="uid://itdjmru2m2ag" path="res://scenes/location_trigger_area.tscn" id="4_7wvbm"]
 [ext_resource type="PackedScene" uid="uid://c8wnhh0aafj18" path="res://scenes/mia.tscn" id="6_hlsmc"]
 [ext_resource type="Script" uid="uid://buq2x1455t77y" path="res://scenes/collision_shape_2d.gd" id="7_3wyi3"]
 [ext_resource type="PackedScene" uid="uid://bue8livua8euk" path="res://scenes/quest_panel.tscn" id="8_4oyfp"]
 [ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="8_lcd1r"]
+[ext_resource type="Texture2D" uid="uid://ca6bdhpgut14q" path="res://assets/sprites/npc/mia_portrait.png" id="9_lcd1r"]
 [ext_resource type="PackedScene" uid="uid://b6bxup0a1bxh0" path="res://scenes/dialogue_panel.tscn" id="10_s6eg2"]
 [ext_resource type="Script" uid="uid://b65k2b75bjsij" path="res://scenes/quest_notification.gd" id="11_s6eg2"]
 
@@ -257,6 +259,12 @@ position = Vector2(319.35287, 179.50002)
 scale = Vector2(0.23348948, 0.23372397)
 texture = ExtResource("1_d1od2")
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1664335230]
+z_index = 10
+position = Vector2(319.35287, 179.50002)
+scale = Vector2(0.23348948, 0.23372397)
+texture = ExtResource("3_s6eg2")
+
 [node name="Character" parent="." unique_id=1068875508 instance=ExtResource("2_w6xti")]
 position = Vector2(378, 190.00002)
 scale = Vector2(1.345, 1.345)
@@ -309,6 +317,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+
+[node name="Avatar" parent="UILayer/DialoguePanel/ModalWindow/MainVBox/TopHBox/AvatarFrame" parent_id_path=PackedInt32Array(2080364744, 941874061) index="0" unique_id=1309051921]
+texture = ExtResource("9_lcd1r")
 
 [node name="OutputLabel" parent="UILayer/DialoguePanel/ModalWindow/MainVBox/TopHBox/DialogueScroll" parent_id_path=PackedInt32Array(2080364744, 271984726) index="0" unique_id=493266638]
 bbcode_enabled = true

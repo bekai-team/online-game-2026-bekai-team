@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dgrr6icu758m3" path="res://assets/ui/window.png" id="4_0inf3"]
 [ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="5_0inf3"]
 [ext_resource type="Texture2D" uid="uid://7gnsh0xayj1m" path="res://assets/ui/btn.png" id="6_ybc78"]
-[ext_resource type="Script" uid="uid://b78c3n8r4jhqh" path="res://scripts/character_editor.gd" id="7_0inf3"]
+[ext_resource type="Script" uid="uid://u8d1bac0as8t" path="res://scripts/character_editor.gd" id="7_0inf3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ucl3"]
 texture = ExtResource("4_0inf3")
@@ -97,7 +97,9 @@ render_target_update_mode = 4
 
 [node name="Character" parent="MainMargin/VBoxContainer/TopSection/AvatarBackground/AvatarPreview/SubViewport" unique_id=1068875508 instance=ExtResource("1_q0e82")]
 unique_name_in_owner = true
-position = Vector2(111, 129)
+texture_filter = 3
+position = Vector2(87.99999, 171)
+scale = Vector2(5.015, 5.015)
 
 [node name="SettingsPanel" type="PanelContainer" parent="MainMargin/VBoxContainer/TopSection" unique_id=1905805774]
 layout_mode = 2
