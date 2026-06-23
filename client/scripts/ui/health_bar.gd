@@ -3,10 +3,10 @@ extends ProgressBar
 @export var player: Character
 
 func _ready() -> void:
-	update()
-
-func _process(delta: float) -> void:
-	pass
+	if player:
+		player.health_changed.connect(update)
+		update()
 
 func update() -> void:
-	value = player.health
+	if player:
+		value = player.health

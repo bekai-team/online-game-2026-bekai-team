@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b6bxup0a1bxh0"]
 
-[ext_resource type="Script" uid="uid://dx62kdla3i5nd" path="res://scripts/dialogue.gd" id="1_dk3e1"]
+[ext_resource type="Script" uid="uid://erwu5xhmhd2v" path="res://scripts/dialogue.gd" id="1_dk3e1"]
 [ext_resource type="Texture2D" uid="uid://cfuc4nxvkv2i0" path="res://assets/ui/bg2.png" id="2_8gsy8"]
-[ext_resource type="Texture2D" uid="uid://dxh2076tnqqgl" path="res://assets/sprites/дід.png" id="2_omdth"]
 [ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="2_yn4um"]
 [ext_resource type="Texture2D" uid="uid://dgrr6icu758m3" path="res://assets/ui/window.png" id="3_2nch4"]
+[ext_resource type="Texture2D" uid="uid://dov4lbtfnvsrv" path="res://assets/ui/npc.png" id="4_8gsy8"]
 [ext_resource type="Texture2D" uid="uid://7gnsh0xayj1m" path="res://assets/ui/btn.png" id="6_b02fd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xm46"]
@@ -112,7 +112,7 @@ custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("2_omdth")
+texture = ExtResource("4_8gsy8")
 expand_mode = 1
 
 [node name="DialogueScroll" type="ScrollContainer" parent="ModalWindow/MainVBox/TopHBox" unique_id=271984726]
@@ -121,6 +121,7 @@ size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_xs0bi")
 
 [node name="OutputLabel" type="RichTextLabel" parent="ModalWindow/MainVBox/TopHBox/DialogueScroll" unique_id=493266638]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -134,7 +135,8 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="KillButton" type="Button" parent="ModalWindow/MainVBox/ButtonHBox" unique_id=1329673236]
+[node name="AcceptButton" type="Button" parent="ModalWindow/MainVBox/ButtonHBox" unique_id=1329673236]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 10)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -142,9 +144,10 @@ theme_override_fonts/font = ExtResource("2_yn4um")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_m3egw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m4jro")
-text = "Kill"
+text = "Accept"
 
-[node name="RecruitButton" type="Button" parent="ModalWindow/MainVBox/ButtonHBox" unique_id=1709660490]
+[node name="DeclineButton" type="Button" parent="ModalWindow/MainVBox/ButtonHBox" unique_id=1709660490]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 10)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -152,9 +155,9 @@ theme_override_fonts/font = ExtResource("2_yn4um")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxTexture_jc442")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m4jro")
-text = "Recruit"
+text = "Decline"
 
-[node name="DialogueInput" type="TextEdit" parent="ModalWindow/MainVBox" unique_id=255551655]
+[node name="DialogueInput" type="LineEdit" parent="ModalWindow/MainVBox" unique_id=2051431662]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 3
