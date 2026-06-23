@@ -11,7 +11,7 @@ var current_hp = 100
 @onready var sprite = $AnimatedSprite2D
 @export var Goal: Node2D = null
 @export var damage: int = 2
-@export var area_target_name: String = 'PickUpBox'
+@export var area_target_name: String = 'MeleeHitbox'
 var entered_area: bool = false
 var is_dangerous = true
 
@@ -65,6 +65,15 @@ func take_damage(amount):
 	
 	if current_hp <= 0:
 		print("Кілограм щура")
+		
+		if Global.quest_state == 1:
+			Global.rats_killed += 1
+			print("Вбито щурів: ", Global.rats_killed, "/", Global.rats_required)
+			
+			if Global.rats_killed >= Global.rats_required:
+				Global.quest_state = 2
+				print("Квест оновлено: повертайтесь до NPC!")
+		
 		queue_free()
 		
 func attack():
@@ -84,3 +93,4 @@ func _on_attack_box_area_entered(area: Area2D) -> void:
 func _on_attack_box_area_exited(area: Area2D) -> void:
 	if area.name == area_target_name:
 		entered_area = false
+		

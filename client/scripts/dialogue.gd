@@ -1,10 +1,12 @@
 extends Control
 
+signal message_sent(text) 
+
 @onready var input_field = $ModalWindow/MainVBox/DialogueInput
 @onready var output_label = $ModalWindow/MainVBox/TopHBox/DialogueScroll/OutputLabel
 
 func _ready():
-	output_label.append_text("[b][color=#53EBE4]Stranger:[/color][/b] You know this is a very dangerous place.\n\n")
+	output_label.append_text("[b][color=#53EBE4]Stranger:[/color][/b] Привіт. Ти тут новенький?[br]\n\n")
 
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ENTER and input_field.has_focus():
@@ -16,4 +18,5 @@ func _send_message():
 	if msg == "": return
 	
 	output_label.append_text("[b]Player:[/b] " + msg + "\n")
+	message_sent.emit(msg)
 	input_field.clear()
