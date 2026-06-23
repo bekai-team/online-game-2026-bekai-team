@@ -15,4 +15,4 @@ func _start_respawn_countdown():
 		time_left -= 1
 	
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/world.tscn") 
+	get_tree().change_scene_to_file("res://scenes/hub.tscn") 

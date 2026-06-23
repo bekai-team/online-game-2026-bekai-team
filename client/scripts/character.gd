@@ -30,6 +30,10 @@ func _ready() -> void:
 func _physics_process(_delta):
 	if is_dead: return 
 	
+	#2. КНОПКА "К" ДЛЯ ТЕСТУВАННЯ СМЕРТІ
+	if Input.is_key_pressed(KEY_K):
+		take_damage(25)
+	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	update_animation(direction)
 	if Input.is_action_just_pressed("attack"):

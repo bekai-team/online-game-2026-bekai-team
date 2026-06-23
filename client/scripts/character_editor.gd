@@ -1,14 +1,14 @@
 extends Control
 
-@onready var start_btn = $MainMargin/VBoxContainer/BottomSection/StartButton
-@onready var character = $MainMargin/VBoxContainer/TopSection/AvatarBackground/AvatarPreview/SubViewport/Character
+@onready var start_btn = %StartButton
+@onready var character = %Character
+
 @onready var clothes_sprite = character.get_node("Skeleton/Upper/Sprite")
 @onready var body_sprite = character.get_node("Skeleton/Body/Sprite")
 
-@onready var clothes_btn = $MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol/OptionButton4
-@onready var skin_btn = $MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol/OptionButton5
-
-@onready var right_col = $MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol
+@onready var clothes_btn = %ClothesBtn
+@onready var skin_btn = %SkinBtn
+@onready var right_col = %RightCol
 
 var clothes_colors = {
 	"Y2K Frost": Color(0.8, 0.9, 1.0),
@@ -81,12 +81,19 @@ func _on_start_pressed():
 	]
 	
 	var create_url = "http://localhost:3000/api/character" 
-	http_request.request(create_url, headers, HTTPClient.METHOD_POST, json_data)
+	#http_request.request(create_url, headers, HTTPClient.METHOD_POST, json_data)
+	Global.player_clothes_color = clothes_sprite.modulate
+	Global.player_skin_color = body_sprite.modulate
+	Engine.get_main_loop().change_scene_to_file('res://scenes/hub.tscn')
 
 func _on_save_completed(result, response_code, headers, body):
 	if response_code == 200 or response_code == 201:
 		Global.player_clothes_color = clothes_sprite.modulate
 		Global.player_skin_color = body_sprite.modulate
-		get_tree().change_scene_to_file("res://scenes/world.tscn")
+		get_tree().change_scene_to_file("res://scenes/hub.tscn")
 	else:
 		start_btn.text = "Error! " + str(response_code)
+		
+	#Global.player_clothes_color = clothes_sprite.modulate
+	#Global.player_skin_color = body_sprite.modulate
+	#get_tree().change_scene_to_file("res://scenes/hub.tscn")

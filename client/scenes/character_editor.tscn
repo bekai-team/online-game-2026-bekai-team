@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dgrr6icu758m3" path="res://assets/ui/window.png" id="4_0inf3"]
 [ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="5_0inf3"]
 [ext_resource type="Texture2D" uid="uid://7gnsh0xayj1m" path="res://assets/ui/btn.png" id="6_ybc78"]
+[ext_resource type="Script" uid="uid://b78c3n8r4jhqh" path="res://scripts/character_editor.gd" id="7_0inf3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ucl3"]
 texture = ExtResource("4_0inf3")
@@ -95,6 +96,7 @@ size = Vector2i(238, 220)
 render_target_update_mode = 4
 
 [node name="Character" parent="MainMargin/VBoxContainer/TopSection/AvatarBackground/AvatarPreview/SubViewport" unique_id=1068875508 instance=ExtResource("1_q0e82")]
+unique_name_in_owner = true
 position = Vector2(111, 129)
 
 [node name="SettingsPanel" type="PanelContainer" parent="MainMargin/VBoxContainer/TopSection" unique_id=1905805774]
@@ -141,7 +143,8 @@ item_count = 1
 popup/item_0/text = "Clothes Style"
 popup/item_0/id = 0
 
-[node name="OptionButton4" type="OptionButton" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol" unique_id=2134472225]
+[node name="ClothesBtn" type="OptionButton" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol" unique_id=2134472225]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("5_0inf3")
 theme_override_fonts/font = ExtResource("2_4itvm")
@@ -150,8 +153,10 @@ selected = 0
 item_count = 1
 popup/item_0/text = "Clothes Color"
 popup/item_0/id = 0
+script = ExtResource("7_0inf3")
 
-[node name="OptionButton5" type="OptionButton" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol" unique_id=1326146041]
+[node name="SkinBtn" type="OptionButton" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/LeftCol" unique_id=1326146041]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("5_0inf3")
 theme_override_fonts/font = ExtResource("2_4itvm")
@@ -160,11 +165,14 @@ selected = 0
 item_count = 1
 popup/item_0/text = "Skin Tone"
 popup/item_0/id = 0
+script = ExtResource("7_0inf3")
 
 [node name="RightCol" type="VBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns" unique_id=1835081403]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
+script = ExtResource("7_0inf3")
 
 [node name="StatRow" type="HBoxContainer" parent="MainMargin/VBoxContainer/TopSection/SettingsPanel/SettingsColumns/RightCol" unique_id=1327490399]
 layout_mode = 2
@@ -388,9 +396,13 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="StartButton" type="Button" parent="MainMargin/VBoxContainer/BottomSection" unique_id=2024302014]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_4itvm")
 theme_override_styles/normal = SubResource("StyleBoxTexture_8ghhc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0inf3")
 text = "START ADVENTURE"
+script = ExtResource("7_0inf3")
+
+[editable path="MainMargin/VBoxContainer/TopSection/AvatarBackground/AvatarPreview/SubViewport/Character"]
