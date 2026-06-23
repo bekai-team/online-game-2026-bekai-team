@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dgrr6icu758m3" path="res://assets/ui/window.png" id="4_0inf3"]
 [ext_resource type="Theme" uid="uid://d4bxu0rb5octp" path="res://resources/theme.tres" id="5_0inf3"]
 [ext_resource type="Texture2D" uid="uid://7gnsh0xayj1m" path="res://assets/ui/btn.png" id="6_ybc78"]
-[ext_resource type="Script" uid="uid://bqvtjre4oiw3b" path="res://scripts/character_editor.gd" id="7_0inf3"]
+[ext_resource type="Script" uid="uid://b78c3n8r4jhqh" path="res://scripts/character_editor.gd" id="7_0inf3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ucl3"]
 texture = ExtResource("4_0inf3")

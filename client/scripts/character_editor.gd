@@ -81,7 +81,10 @@ func _on_start_pressed():
 	]
 	
 	var create_url = "http://localhost:3000/api/character" 
-	http_request.request(create_url, headers, HTTPClient.METHOD_POST, json_data)
+	#http_request.request(create_url, headers, HTTPClient.METHOD_POST, json_data)
+	Global.player_clothes_color = clothes_sprite.modulate
+	Global.player_skin_color = body_sprite.modulate
+	Engine.get_main_loop().change_scene_to_file('res://scenes/hub.tscn')
 
 func _on_save_completed(result, response_code, headers, body):
 	if response_code == 200 or response_code == 201:
@@ -90,3 +93,7 @@ func _on_save_completed(result, response_code, headers, body):
 		get_tree().change_scene_to_file("res://scenes/hub.tscn")
 	else:
 		start_btn.text = "Error! " + str(response_code)
+		
+	#Global.player_clothes_color = clothes_sprite.modulate
+	#Global.player_skin_color = body_sprite.modulate
+	#get_tree().change_scene_to_file("res://scenes/hub.tscn")
