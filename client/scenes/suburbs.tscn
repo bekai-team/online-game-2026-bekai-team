@@ -22,7 +22,7 @@ agent_radius = 7.0
 [node name="Suburbs" type="Node2D" unique_id=958590333]
 
 [node name="Character" parent="." unique_id=1068875508 instance=ExtResource("1_0mx60")]
-position = Vector2(-7, -19)
+position = Vector2(-7, -46.1)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=1475476092]
 zoom = Vector2(3, 3)
