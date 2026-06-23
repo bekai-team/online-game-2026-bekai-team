@@ -72,11 +72,11 @@ func perform_attack():
 	if body.is_playing():
 		body.connect("animation_finished", _on_attack_animation_finished)
 	
-	var overlapping_objects = hitbox.get_overlapping_bodies()
-	
-	for object in overlapping_objects:
-		if object.has_method("take_damage"):
-			object.take_damage(damage)
+	#var overlapping_objects = hitbox.get_overlapping_bodies()
+	#
+	#for object in overlapping_objects:
+		#if object.has_method("take_damage"):
+			#object.take_damage(damage)
 
 func _on_attack_animation_finished():
 	set_physics_process(true)
