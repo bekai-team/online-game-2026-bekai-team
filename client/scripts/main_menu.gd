@@ -10,7 +10,7 @@ extends Control
 var ping_req = HTTPRequest.new()
 var profile_req = HTTPRequest.new()
 
-var port = "3001" 
+var port = "3000" 
 
 func _ready():
 	add_child(ping_req)

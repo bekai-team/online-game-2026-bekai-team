@@ -6,7 +6,7 @@ extends Button
 @onready var error_label = $"../ErrorLabel"
 @onready var http_request = $HTTPRequest
 
-var port = "3001" 
+var port = "3000" 
 @onready var register_url = "http://localhost:" + port + "/api/auth/sign-up" # Виправлено на sign-up
 
 func _ready():
