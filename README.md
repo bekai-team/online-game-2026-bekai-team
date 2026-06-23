@@ -4,7 +4,7 @@ Welcome to **Maditron**, a gritty cyberpunk top-down RPG shooter featuring stunn
 
 ---
 
-## ✨ Features
+## 🌌 Gameplay Features
 
 * 🌍 Seamless immersion - explore the detailed game world without annoying loading screens thanks to a smooth spatial transition system between locations and the hub.
 * 🤖 Live conversations with NPCs - get unique, meaningful and useful tips in real time thanks to the integration of modern artificial intelligence models (LLM), which makes every dialogue unique.
@@ -20,8 +20,8 @@ Welcome to **Maditron**, a gritty cyberpunk top-down RPG shooter featuring stunn
 For guaranteed and stable operation of the project, make sure that you have the following software versions installed:
 * Game Engine: Godot Engine v4.2.2+ (for the client part)
 * Backend Runtime: Node.js v20.0+
-* Database: PostgreSQL v15+
-* Package Manager: npm v10+
+* Database: PostgreSQL v16+
+* Package Manager: npm v11+
 
 ### 2. Database Setup
 To deploy and populate the database with the necessary structure, go to the backend directory and run the following commands:
@@ -37,17 +37,24 @@ All project configuration is done through environment variables. A template file
 You need to create a .env file and copy the structure from .env.example there:
 
 ```env
-# URL for connecting to the PostgreSQL database (change user and password to your own)
-DB_URL="postgresql://user:password@localhost:5432/maditron_db"
+# For connecting to the PostgreSQL database (change user and password to your own)
 
-# Secret key for generating player authorization tokens (minimum 32 characters)
-JWT_SECRET="your_super_secret_jwt_key_here"
+POSTGRES_HOST=127.0.0.1
+POSTGRES_PORT=5432
+POSTGRES_DB=maditron
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=123
 
-# Access key to the artificial intelligence API for generating NPC dialogues
-LLM_API_KEY="sk-your-llm-api-key"
-```
+WEB_SOCKETS_HOST=127.0.0.1
+WEB_SOCKETS_PORT=80
 
----
+OLLAMA_MODEL=gemma4
+
+JWT_SECRET=your_secret
+JWT_EXPIRE_IN=1h
+
+REFRESH_JWT_SECRET=your_secret
+REFRESH_JWT_EXPIRE_IN=60d
 
 ## 🛠️ Tech Stack
 
@@ -121,12 +128,3 @@ Bash
     Once the project loads inside the Godot Editor, press F5 (or click the Play icon in the top right corner) to launch and run the game client.
 
 ---
-
-## 🌌 Gameplay Features
-
-    Cyberpunk Aesthetics: Dark, atmospheric synth-wave environment featuring vibrant neon lights and meticulously crafted pixel art.
-
-    Top-Down Shooter Combat: Fast-paced gunplay, bullet-hell dodging, and tactical gun modifications.
-
-    RPG Progression: Character stats customization, level-up trees, faction reputation, and grid-based cybernetic enhancements.
->>>>>>> aaf9aaf610ff4f68e383c692955a0cde427af801
