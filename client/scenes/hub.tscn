@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dflqssf48cyqh" path="res://assets/tilesets/suburbs.png" id="1_w6xti"]
 [ext_resource type="PackedScene" uid="uid://cm43dfutshc5u" path="res://scenes/character.tscn" id="2_w6xti"]
 [ext_resource type="PackedScene" uid="uid://itdjmru2m2ag" path="res://scenes/location_trigger_area.tscn" id="4_7wvbm"]
-[ext_resource type="PackedScene" uid="uid://dpoym83b5gsvs" path="res://scenes/suburbs.tscn" id="5_bfqb0"]
 [ext_resource type="PackedScene" uid="uid://c8wnhh0aafj18" path="res://scenes/mia.tscn" id="6_hlsmc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wvbm"]
@@ -271,8 +270,7 @@ blend_mode = 2
 [node name="LocationTriggerArea" parent="." unique_id=332173001 instance=ExtResource("4_7wvbm")]
 position = Vector2(329, 26.000002)
 scale = Vector2(2.315, 2.315)
-target_area_name = null
-target_level_to_load = ExtResource("5_bfqb0")
+target_level_path = "uid://dpoym83b5gsvs"
 
 [node name="Mia" parent="." unique_id=526788498 instance=ExtResource("6_hlsmc")]
 position = Vector2(463, 184)

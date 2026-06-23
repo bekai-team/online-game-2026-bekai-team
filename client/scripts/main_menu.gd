@@ -3,6 +3,9 @@ extends Control
 @onready var status_label = $StatusLabel
 @onready var info_label = $InfoLabel
 @onready var play_button = $PlayButton
+@onready var logout_button = $LogoutButton
+@onready var login_button = $Login
+@onready var register_button = $Register
 
 var ping_req = HTTPRequest.new()
 var profile_req = HTTPRequest.new()
@@ -24,6 +27,9 @@ func _ready():
 		profile_req.request_completed.connect(_on_profile_completed)
 		var headers = ["Authorization: Bearer " + SessionManager.access_token]
 		profile_req.request("http://localhost:" + port + "/api/profile", headers)
+		logout_button.visible = true
+		login_button.visible = false
+		register_button.visible = false
 	else:
 		info_label.text = "Status: Guest Session"
 

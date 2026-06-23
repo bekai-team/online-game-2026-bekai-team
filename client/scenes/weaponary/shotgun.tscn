@@ -23,3 +23,7 @@ position = Vector2(64.605, -4.44)
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=547461369]
 stream = ExtResource("3_bkjqd")
+
+[node name="Timer" type="Timer" parent="." unique_id=844410762]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

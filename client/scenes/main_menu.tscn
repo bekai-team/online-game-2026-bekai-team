@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dm62hu472f0qk" path="res://scripts/login_menu_btn.gd" id="5_8ln24"]
 [ext_resource type="Script" uid="uid://bm6yorc8vb52b" path="res://scripts/register_menu_btn.gd" id="5_rtw2f"]
 [ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="6_rtw2f"]
+[ext_resource type="Script" uid="uid://crgdm8v22ku3b" path="res://scenes/logout_button.gd" id="7_tbmy8"]
 
 [node name="Main Menu" type="Control" unique_id=936435750]
 layout_mode = 3
@@ -53,6 +54,19 @@ offset_bottom = 242.0
 theme = ExtResource("3_wu84c")
 text = "Play"
 
+[node name="LogoutButton" type="Button" parent="." unique_id=293393482]
+visible = false
+layout_mode = 0
+offset_left = 517.0
+offset_top = 254.0
+offset_right = 604.0
+offset_bottom = 282.0
+theme = ExtResource("3_wu84c")
+text = "Logout"
+script = ExtResource("7_tbmy8")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="LogoutButton" unique_id=462548255]
+
 [node name="StatusLabel" type="Label" parent="." unique_id=814463535]
 z_index = 5
 layout_mode = 0
@@ -74,3 +88,5 @@ theme_override_fonts/font = ExtResource("6_rtw2f")
 [connection signal="pressed" from="Login" to="Login" method="_on_pressed"]
 [connection signal="pressed" from="Register" to="Register" method="_on_pressed"]
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="LogoutButton" to="LogoutButton" method="_on_pressed"]
+[connection signal="request_completed" from="LogoutButton/HTTPRequest" to="LogoutButton" method="_on_http_request_request_completed"]
