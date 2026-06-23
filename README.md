@@ -172,3 +172,9 @@ Bash
 - [Test Summary Report (Google Drive)](https://docs.google.com/document/d/1QyYDkwzUxSR0Rn31Y34HI3jWd9n-DgC2EAnht78ehek/edit?usp=sharing)
 - [Requirements Traceability Matrix (Notion)](https://app.notion.com/p/Requirements-Traceability-Matrix-350c2e3d9baf80c2ab25c4a7fdb66525?source=copy_link)
 - [Test Plan (XLSX)](/docs/test_plan.xlsx)
+
+### Marketing
+- [Elevator Pitch](/docs/marketing/copywriting/elevator_pitch.pdf)
+- [Market Analysis](/docs/marketing/strategy/market_analysis.pdf)
+- [Social Media Plan](/docs/marketing/strategy/social_media_plan.pdf)
+- [Promotional Teaser Video](/docs/marketing/video/maditron_promo.mp4)
