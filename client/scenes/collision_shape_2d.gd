@@ -71,8 +71,7 @@ func _on_accept_pressed():
 		Global.quest_state = 3
 		var end_scene_path = "res://scenes/end_screen.tscn" 
 		if ResourceLoader.exists(end_scene_path):
-			var end_scene = load(end_scene_path).instantiate()
-			get_tree().root.add_child(end_scene) 
+			get_tree().change_scene_to_file(end_scene_path)
 		else:
 			print("ПОМИЛКА: Не знайдено сцену за шляхом: ", end_scene_path)
 	
