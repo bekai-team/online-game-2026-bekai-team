@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://hioo7ux4ocuv" path="res://scenes/enemies/rat_white.tscn" id="10_kebwf"]
 [ext_resource type="PackedScene" uid="uid://ouf325mosgyi" path="res://scenes/enemies/rat_brown.tscn" id="11_1xm8o"]
 [ext_resource type="PackedScene" uid="uid://itdjmru2m2ag" path="res://scenes/location_trigger_area.tscn" id="12_1xm8o"]
-[ext_resource type="PackedScene" uid="uid://bw4upi6fvqs7n" path="res://scenes/hub.tscn" id="13_1xm8o"]
 [ext_resource type="PackedScene" uid="uid://bue8livua8euk" path="res://scenes/quest_panel.tscn" id="14_vkaa4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q6b0k"]
@@ -24,7 +23,7 @@ agent_radius = 7.0
 [node name="Suburbs" type="Node2D" unique_id=958590333]
 
 [node name="Character" parent="." unique_id=1068875508 instance=ExtResource("1_0mx60")]
-position = Vector2(-7, -19)
+position = Vector2(-7, -46.1)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=1475476092]
 zoom = Vector2(3, 3)
@@ -138,8 +137,8 @@ is_destroyable_on_enter = true
 
 [node name="LocationTriggerArea" parent="." unique_id=332173001 instance=ExtResource("12_1xm8o")]
 z_index = 1
-position = Vector2(0, 1)
-scale = Vector2(1.76, 0.46)
-target_level_to_load = ExtResource("13_1xm8o")
+position = Vector2(0, 1.9999995)
+scale = Vector2(2.655, 0.71)
+target_level_path = "uid://bw4upi6fvqs7n"
 
 [node name="QuestPanel" parent="." unique_id=1466482098 instance=ExtResource("14_vkaa4")]

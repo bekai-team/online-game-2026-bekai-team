@@ -4,14 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dflqssf48cyqh" path="res://assets/tilesets/suburbs.png" id="1_w6xti"]
 [ext_resource type="PackedScene" uid="uid://cm43dfutshc5u" path="res://scenes/character.tscn" id="2_w6xti"]
 [ext_resource type="PackedScene" uid="uid://itdjmru2m2ag" path="res://scenes/location_trigger_area.tscn" id="4_7wvbm"]
-[ext_resource type="PackedScene" uid="uid://dpoym83b5gsvs" path="res://scenes/suburbs.tscn" id="5_bfqb0"]
 [ext_resource type="PackedScene" uid="uid://c8wnhh0aafj18" path="res://scenes/mia.tscn" id="6_hlsmc"]
-[ext_resource type="Script" uid="uid://buq2x1455t77y" path="res://scenes/collision_shape_2d.gd" id="7_3wyi3"]
+[ext_resource type="Script" uid="uid://ckfhjo1kc4tm2" path="res://scenes/collision_shape_2d.gd" id="7_3wyi3"]
 [ext_resource type="PackedScene" uid="uid://bue8livua8euk" path="res://scenes/quest_panel.tscn" id="8_4oyfp"]
 [ext_resource type="FontFile" uid="uid://dkbq1v2jprwog" path="res://assets/fonts/8bitoperator_jve.ttf" id="8_lcd1r"]
 [ext_resource type="PackedScene" uid="uid://b6bxup0a1bxh0" path="res://scenes/dialogue_panel.tscn" id="10_s6eg2"]
-[ext_resource type="Script" uid="uid://dw4ci5pxlhr37" path="res://scenes/exit_to_world.gd" id="11_lcd1r"]
-[ext_resource type="Script" uid="uid://b65k2b75bjsij" path="res://scenes/quest_notification.gd" id="11_s6eg2"]
+[ext_resource type="Script" uid="uid://bfm53tjvq5gga" path="res://scenes/quest_notification.gd" id="11_s6eg2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wvbm"]
 texture = ExtResource("1_w6xti")
@@ -248,9 +246,6 @@ sources/0 = SubResource("TileSetAtlasSource_7wvbm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glsmu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcd1r"]
-size = Vector2(66, 53.5)
-
 [node name="Hub" type="Node2D" unique_id=1934123651]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1112893051]
@@ -280,10 +275,9 @@ energy = 0.4
 blend_mode = 2
 
 [node name="LocationTriggerArea" parent="." unique_id=332173001 instance=ExtResource("4_7wvbm")]
-position = Vector2(611, 27)
+position = Vector2(329, 30)
 scale = Vector2(2.315, 2.315)
-target_area_name = null
-target_level_to_load = ExtResource("5_bfqb0")
+target_level_path = "uid://dpoym83b5gsvs"
 
 [node name="Mia" parent="." unique_id=526788498 instance=ExtResource("6_hlsmc")]
 position = Vector2(463, 184)
@@ -336,14 +330,5 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("8_lcd1r")
 theme_override_font_sizes/font_size = 24
 script = ExtResource("11_s6eg2")
-
-[node name="ExitToWorld" type="Area2D" parent="." unique_id=1102817906]
-collision_layer = 7
-collision_mask = 7
-script = ExtResource("11_lcd1r")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitToWorld" unique_id=1777341223]
-position = Vector2(327, 34.25)
-shape = SubResource("RectangleShape2D_lcd1r")
 
 [editable path="UILayer/DialoguePanel"]
