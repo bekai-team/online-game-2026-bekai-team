@@ -51,17 +51,17 @@ cd maditron
 The backend handles player authentication, RPG stats, and game states. Navigate to the API directory, install your dependencies, and spin up the development server with hot-reload enabled.
 Bash
 
-# 1. Step into the API subdirectory
-cd ./api
+2.1. Step into the API subdirectory
+```cd ./api```
 
-# 2. Install backend dependencies
-npm install
+2.2. Install backend dependencies
+```npm install```
 
-# 3. Setup your environment variables (if applicable)
-# cp .env.example .env
+2.3. Setup your environment variables (if applicable)
+```cp .env.example .env```
 
-# 4. Start the NestJS application in watch mode
-nest start --watch
+2.4. Start the NestJS application in watch mode
+```nest start --watch```
 
     Note: The API server should now be running locally (typically at http://localhost:3000).
 
