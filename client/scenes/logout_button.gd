@@ -1,7 +1,7 @@
 extends Button
 
 @onready var http_request: HTTPRequest = $HTTPRequest
-var logout_url = "http://localhost:3001/api/auth/logout"
+var logout_url = "http://localhost:3000/api/auth/logout"
 
 func _ready():
 	http_request.request_completed.connect(_on_http_request_request_completed)

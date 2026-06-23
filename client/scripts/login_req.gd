@@ -5,7 +5,7 @@ extends Button
 @onready var error_label = $"../ErrorLabel"
 @onready var http_request = $HTTPRequest
 
-var login_url = "http://localhost:3001/api/auth/login"
+var login_url = "http://localhost:3000/api/auth/login"
 
 func _ready():
 	http_request.request_completed.connect(_on_request_completed)
