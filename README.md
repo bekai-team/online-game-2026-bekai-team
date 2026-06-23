@@ -1,5 +1,3 @@
----
-
 # Maditron 🕹️⚡
 
 Welcome to **Maditron**, a gritty cyberpunk top-down RPG shooter featuring stunning retro pixel art. Experience high-octane combat, deep role-playing mechanics, and an immersive neon-drenched world driven by a powerful NestJS backend and a seamless Godot frontend engine.
