@@ -19,6 +19,7 @@ maditron/
 ├── api/                    # NestJS Backend Application
 └── client/                 # Godot Engine Project Files
 └── docker-compose/         # Docker-compose folder
+```
 
 ---
 
